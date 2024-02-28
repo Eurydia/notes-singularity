@@ -16,6 +16,8 @@ This section clarify unorthodox notations used within [[Index of programming the
 
 ## Sequence
 
+**Definition**: Given a set $V$, the set containing finite and infinite **sequence** of elements of $V$ is denoted by $V^{**}$. In other words, $V^{**}:=V^{*}\cup V^{\infty}$, where the set $V^{*}$ contains every finite sequence of elements of $V$, $V^{\infty}$ contains every infinite sequence of elements of $V$, and $V^{*}\cap V^\infty=\emptyset$. 
+
 **Definition**: Given a sequence $X$, the notation $|X|$ represents the length of $X$. If $X$ is infinite sequence, then $|X|=\infty$.
 
 Informally, a **sequence** $X$ is an ordered collection of objects which can have finite or infinitely many **elements**. Elements of a sequence is given between angle brackets,
