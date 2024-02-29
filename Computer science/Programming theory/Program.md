@@ -4,16 +4,16 @@ Given an arbitrary state space $A$, called the **base state space**, the set $\o
 
 $$\overline{A} := \{b\in B_{i} : \forall i\in\mathbb{N}^{+} : A\le B_{i}\}.$$
 
-Informally, $\overline{A}$ is a set of states $b\in B$ for every state space $B$ where $A$ is a subspace of.
+Informally, $\overline{A}$ is a set of **states** $b\in B$ for every **state space** $B$ where $A$ is a subspace of.
 
-The binary relation $S\subseteq A\times (\overline{A}\cup \{\text{fail}\})^{∗∗}$ is called **program** over $A$, if
+The binary relation $S\subseteq A\times (\overline{A}\cup \{\text{fail}\})^{∗∗}$ is called **program** over $A$ if
 
 1. $\mathcal{D}_{S} = A$
 2. $\forall a\in A : (\forall v \in S(a) : (|v|\ge 1\land v_{1} = a))$
 3. $\forall v\in \mathcal{R}(S) : (\forall i \in\mathbb{N}^{+} : i < |v| \implies v_{i}\ne\text{fail})$
 4. $\forall v\in\mathcal{R}(S): (|v|\lt\infty\implies v_{|v|}\in A\cup\text{fail})$
 
-Informally, a **program** $S$ over $A$ assigns at least one [[Background and notations|sequence]] to every state $a\in A$. For every sequence $v\in\mathcal{R}(S)$ assigned to a state $a\in A$, $v$ must begin with $a$. The special state $\text{fail}$ can only be the last element of the sequence $v\in\mathcal{R}(S)$. The last state of a finite program is either a state $a\in A$ or $\text{fail}$.
+Informally, a **program** $S$ over $A$ assigns at least one [[Background and notations|sequence]] to every state $a\in A$. For every sequence $v\in S(a)$ assigned to a state $a\in A$, $v$ must begin with $a$. The special state $\text{fail}$ can only be the last element of the sequence $v\in S(a)$. The last state of a finite program is either a state $a\in A$ or $\text{fail}$.
 
 ## Weak program function
 
