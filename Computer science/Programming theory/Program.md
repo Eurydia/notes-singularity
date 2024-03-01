@@ -28,7 +28,7 @@ Informally, if a program $S$ assigns at least one finite sequence to a state $a\
 
 **Definition**: The **program function** of a **program** $S\subseteq A\times(\overline{A}\cup\{\text{fail}\})^{**}$ on the **state space** $A$, denoted by $p(S)$, is a binary relation $p(S)\subseteq A\times A$, such that
 
-1. $\mathcal{D}_{p(s)} = \{a\in A : S(a)\subseteq \left(\overline{A}\right)^{*}\}$
+1. $\mathcal{D}_{p(s)} = \left\{a\in A : S(a)\subseteq \left(\overline{A}\right)^{*}\right\}$
 2. $\forall a\in\mathcal{D}_{p(s)} : (p(S)(a) = \{b\in A : \exists v\in S(a) : (b = v_{|v|})\})$
 
 Informally, if a program $S$ assigns only finite and $\text{fail}$-less sequences to a state $a\in A$, then the ordered pair $(a,b)\in A\times A$ is a member of $p(S)$, where $b\in A$ denotes the last element of the finite and $\text{fail}$-less sequence assigned to $a$ by $S$.

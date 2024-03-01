@@ -14,7 +14,7 @@ The **state space** $S:=(n:\mathbb{N}, r:\mathbb{N})$ contains
 
 $$
 \begin{matrix*}
-(n\:\mathbb{N},r:\mathbb{N}) = &\{\\
+(n:\mathbb{N},r:\mathbb{N}) = &\{\\
 &&\{n:1, r:1\},&\{n:1, r:2\},&\ldots\\
 &&\{n:2, r:1\},&\{n:2, r:2\},&\ldots\\
 &&\vdots&\vdots\\

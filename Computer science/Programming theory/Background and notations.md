@@ -36,13 +36,13 @@ $$
 \begin{matrix*}
 &\{\\
 &&(a_{1},b_{1}),&\ldots,&(a_{1},b_{n}),\\
-&&\vdots,&\ddots,&\vdots\\
+&&\vdots&\ddots&\vdots\\
 &&(a_{m},b_{1}),&\ldots,&(a_{m},b_{n}),\\
 &\}
 \end{matrix*}
 $$
 
-**Definition**: Given two non-empty sets $A,B$, a binary relation from $A$ to $B$ is a subset $R\subseteq A\times B$.
+**Definition**: Given two non-empty sets $A,B$, a binary relation $R$ from $A$ to $B$ is a subset of $A\times B$.
 
 **Definition**: Given two non-empty sets $A,B$, the **domain** of a binary relation $R\subseteq A\times B$ is defined as:
 
@@ -65,3 +65,9 @@ $$\forall a\in A : |R(a)|\le 1.$$
 **Definition**: Given two non-empty sets $A,B$, a deterministic binary relation $R\subseteq A\times B$ is said to be a **partial function**, denoted by $R\in A\to B$, if $\mathcal{D}_{R}\subsetneq A$.
 
 **Definition**: Given two non-empty sets $A,B$, a deterministic binary relation $R\subseteq A\times B$ is said to be a **(total) function**, denoted by $R: A\to B$, if $\mathcal{D}_{R}=A$.
+
+Informally, a binary relation $R\subseteq A\times B$ is said to be a (total) **function** if 
+
+$$
+\forall a\in A : |R(a)| = 1.
+$$
