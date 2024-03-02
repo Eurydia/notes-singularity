@@ -1,8 +1,8 @@
 # Binary relation
 
-## Ordered pairs
+**Definition**: An ordered pair, denoted by $(A, B)$ is a mathematical object, where the components $A,B$ are sets, called the **first** and **second coordinate**, respectively. 
 
-An ordered pair, denoted by $(A, B)$ is a mathematical object constructed from **sets**. The components $A,B$ are sets, called the **first** and **second coordinate**, respectively. Two ordered pairs $(A,B), (X,Y)$ are equal if and only if $A=X$ and $B=Y$.
+Two ordered pairs $(A,B), (X,Y)$ are equal if and only if $A=X$ and $B=Y$.
 
 Ordered pairs can be defined in different equivalent ways, as long as the definition satisfy the equality requirement.
 
@@ -12,4 +12,4 @@ The current widely-accepted definition of an ordered pairs is given by **Kazimie
 
 $$(X,Y):=\{\{X\},\{X,Y\}\}$$
 
-## Binary relation
+## Named properties
