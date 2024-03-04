@@ -6,71 +6,58 @@ There are many equivalent formulations of the axioms of ZF set theory. Most of t
 
 ## Axioms
 
-### Axiom of extensionality
-
-The axiom states that; two sets are equivalent if they contain the exact same element. Essentially, this axiom defines the relation $=$ between sets.
-
-More formally, the sets $X,Y$ are said to be equivalent if 
+**Axiom of extensionality**: Two sets $X,Y$ are equal if they contain the exact same element:
 
 $$
-(\forall x\in X : x\in Y)\land(\forall y\in Y : y\in X)
+(\forall x\in X : x\in Y)\land(\forall y\in Y : y\in X).
 $$
 
-Sometimes the relation $=$ is treated as an abbreviation of the expression 
+Informally, set equality $=$ is treated as an abbreviation of the expression:
 
 $$X\subseteq Y\land Y\subseteq X.$$
 
-It is worth noting that; this axiom separates **sets** from **multisets**. Consider the sets $A:=\{x\}$ and $B:=\{x,x\}$. Every element of $A$ is present in $B$ and vice versa. Since the requirement for two sets to be equal is  **weak**, the multiplicity is ignored.
+This axiom separates **sets** from **multisets**. Consider the sets $A:=\{x\}$ and $B:=\{x,x\}$. Every element of $A$ is present in $B$ and vice versa. Since the requirement for two sets to be equal is  **weak**, the multiplicity is ignored.
 
-### Axiom of regularity
-
-Intuitively, this axiom arises from the famous **set contain all set** paradox. It disallows a set from containing itself.
-
-Formally, the axiom states that every non-empty set $X$ must contain an element which is disjointed from it,
+**Axiom of regularity**: A non-empty set $X$ must contain an element which is disjointed from it.:
 
 $$
-\forall X : X\ne\emptyset\implies (\exists x\in X : X\cap x=\emptyset)
+\forall X : (X\ne\emptyset\implies (\exists x : (x\in X\implies X\cap x=\emptyset))).
 $$
 
-### Axiom schema of specification
+This axiom solves the famous **set contain all set** paradox by disallowing a set from containing itself.
 
-Sets can be constructed from another set via the **set-builder** notation. This axiom places restrictions on the **set-builder** notation, so that it prevents the **set-contain-all-set** paradox.
-
+**Axiom schema of specification**: Sets can be constructed from another set via the **set-builder** notation. This axiom places restrictions on the **set-builder** notation, so that it prevents the **set-contain-all-set** paradox.
 
 Consider a set $A$ and a predicate $p$, the subset $B\subseteq A$ can be defined in terms of the underlying set $A$ and the predicate $p$
 
 $$B:=\{a\in A : p(a)\}$$
 
-### Axiom of pairing
+**Axiom of pairing**: For every pair of sets $X,Y$, there exists a set $Z$ which contains both $X$ and $Y$:
 
-The axiom states that for every pair of sets $X,Y$, there exists a set which contains both.
+$$\forall X, Y(\exists Z : X\in Z\land Y\in Z).$$
 
-$$\forall X, Y(\exists Z : X\in Z\land Y\in Z)$$
-
-### Axiom of union
-
-The axiom states that for any system of sets $K:=\{S_{1}, S_{2},S_{3},\ldots\}$, there exists a set $A$ which contains every elements of the set $S_{n}$ in the system $K$.
+**Axiom of union**: For any set of sets $\mathcal{H}$, there exists a set $K$ which contains elements that is an element in $\mathcal{H}$:
 
 $$
-\forall S\in K : (\forall x\in S : x\in A)
+\forall\mathcal{H} : (\exists K : (\forall H : (\forall h : (h\in H\land H\in\mathcal{H}\implies h\in K)))).
 $$
 
-### Axiom schema of replacement
+**Axiom schema of replacement**: The image of a set under any definable mapping is also a set. This axiom  is necessary for the construction of certain infinite sets in ZF. 
 
-The axiom states that the image of any set under any definable mapping is also a set. It is necessary for the construction of certain infinite sets in ZF. 
-
-### Axiom of infinity
-
-The axiom states that there exists an element with infinitely many elements. More specifically, the set of natural numbers.
-
-### Axiom of power set
-
-The axiom states that for every set $X$ there exists a set $K$ which contain every subset of $X$.
+**Axiom of infinity**: There a set $X$ such that $\emptyset\in X$. If a set $Y$ is an element of $X$, then $Y\cup\{Y\}$ is also an element of $X$:
 
 $$
-\forall k\subseteq X : k\in K
+\exists X : (\emptyset \in X )\land \forall Y (Y\in X\implies (Y\cup\{Y\})\in X).
 $$
 
-### Axiom of choice
+**Axiom of power set**: For every set $\mathcal{X}$ there exists a set $Y$ which contain every subset of $\mathcal{X}$:
 
-The axiom states that for every system of non-empty set $X:=\{X_{1}, X_{2}, X_{3},\ldots\}$, there exists a **choice function** $f$ that maps $X_{n}\in X$ to an element $x\in X_{n}$. 
+$$
+\forall\mathcal{X} : (\exists Y : (\forall X : (X\subseteq \mathcal{X}\implies X\in Y))).
+$$
+
+**Axiom of choice**: For every set of non-empty sets $\mathcal{X}:=\{X_{1}, X_{2}, X_{3},\ldots\}$, there exists a **choice function** $f: \mathcal{X}\to\bigcup\mathcal{X}$ that maps $X_{n}\in \mathcal{X}$ to an element $x\in X_{n}$ for every $n\in\{1,2,3,\ldots\}$:
+
+$$
+\forall\mathcal{X} : (\emptyset\notin\mathcal{X}\implies\exists f : (\forall X: (X\in\mathcal{X}\implies f(X)\in X))).
+$$
