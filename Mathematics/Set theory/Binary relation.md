@@ -33,9 +33,12 @@ Note that the cartesian product of three or more sets is possible but it is not 
 
 **Definition**: A **binary relation** $R$ from set $A$ to set $B$ is a subset of $A\times B$, denoted by $R\subseteq A\times B$.
 
+For every ordered pairs $(a,b)\in R$, the terms "$aRb$" or "$a$ is $R$-related to $b$" express their relation.
+
 **Definition**: A binary relation $R\subseteq A\times B$ is said to be **homogeneous** if $A=B$. In such a case, the term "$R$ is binary relation on $A$" has the same meaning as "$R$ is a binary relation from $A$ to $A$." 
 
 **Definition**: A binary relation $R\subseteq A\times B$ is said to be **heterogenous** if $A\ne B$.
+
 
 ### Notations
 
@@ -163,8 +166,32 @@ $$\forall a,b\in X : ((x,y)\in R \lor (y,x)\in R).$$
 - **anti-symmetric**, and
 - **transitive**.
 
-### Total ordering and strict total ordering
+**Definition**: An element $x\in X$ which is partially ordered by $R$ on $X$ is said to be the **least element** if:
 
+$$
+\forall y\in X : (x,y)\in R.
+$$
+
+**Definition**: An element $x\in X$ which is partially ordered by $R$ on $X$ is said to be the **greatest element** if:
+
+$$
+\forall y\in X : (y,x)\in R.
+$$
+
+**Definition**: An element $x\in X$ which is partially ordered by $R$ on $X$ is said to be the **minimal element** if:
+
+$$
+\nexists y\in X : x\ne y\land (y,x)\in R
+$$
+
+**Definition**: An element $x\in X$ which is partially ordered by $R$ on $X$ is said to be the **maximal element** if:
+
+$$
+\nexists y\in X : x\ne y\land (x,y)\in R
+$$
+
+
+### Total ordering and strict total ordering
 
 **Definition**: A binary relation $R$ on $X$ is said to **totally order** $X$ if $R$ is:
 - **reflexive**,
@@ -185,8 +212,6 @@ $$\forall a,b\in X : ((x,y)\in R \lor (y,x)\in R).$$
 - **symmetric**, and
 - **transitive**.
 
-- Least, greatest, minimal and maximal element
-
 ### Equivalence class
 
 **Definition**: The equivalence class of an element $a\in X$ induced by the equivalence relation $R$ on $X$, denoted by $[a]_{R}$, is a **partition** of $X$ defined as:
@@ -194,3 +219,35 @@ $$\forall a,b\in X : ((x,y)\in R \lor (y,x)\in R).$$
 $$
 [a]_{R} := \{x\in X : (a,x)\in R\}.
 $$
+
+## Function
+
+**Definition**: A binary relation $R\subseteq A\times B$ is said to be a **function** if:
+
+$$
+\forall a,a',b : ((a,b)\in R\land (a',b)\in R \implies a=a').
+$$
+
+For every ordered pairs $(x,y)\in R$, the notation "$R(x)=y$" denotes their relation. 
+
+**Definition**: A function $f$ from $X$ to $Y$ is said to be a **partial function**, denoted by $f\in X\to Y$, if $\text{dmn}(f)\subset X$.
+
+**Definition**: A function $f$ from $X$ to $Y$ is said to be a **(total) function**, denoted by $f: X\to Y$, if $\text{dmn}(f)=X$.
+
+### Important properties
+
+**Definition**: A function $f:X\to Y$ is said to be **injective** if:
+
+$$
+\forall x,x' : (f(x)=f(x')\implies x=x').
+$$
+
+**Definition**: A function $f:X\to Y$ is said to be **surjective** if:
+
+$$
+\text{codmn}(f) = Y.
+$$
+
+**Definition**: A function $f:X\to Y$ is said to be **bijective** if $f$ is:
+- **injective**, and
+- **surjective**.
