@@ -1,78 +1,68 @@
 # Stack
 
-**Definition**: A **stack** is an ordered collection of items. Two essential operations are defined on a stack: **push** and **pop**.
+**Definition**: A **stack** is an ordered collection of elements. Elements of a stack are removed in the reserved order in which they are inserted, called **last-in-first-out**. In practice, a stack can be implemented as a specialized **array**.
 
-The **push** operation adds an element onto the top of the stack, and the **pop** operation removes the top-most element from the stack. Such an order is called **last-in-first-out**.
+A stack data structure can be represented with three attributes: stack size, top position, and an array or other data structure to store the data. 
+
+**Definition**: The **PUSH** operation adds an element onto the top of the stack. **Pushing** an element onto a full stack results in an error called **stack overflow**.
+
+**Definition**: The **POP** operation removes the top-most element from the stack. **Popping** an element from an empty stack results in an error called **stack underflow**.
+
+**Definition**: The **EMPTY** query checks whether a stack is empty or not.
+
+The stack operations have $O(1)$ time complexity.
 
 ## Implementation
 
-A stack can be represented with an **array** or a **linked list** with two exposed operations.
-
-### Array
-
-An array representation of a stack has to keep track of of some attributes. Namely, the position of the top-most element, the stack size, and the actual data itself.
+In TypeScript, a stack can be implemented as a object with three attributes: **size**, **top**, and **data**.
 
 ```ts
-//typescript
 type Stack {
-	top: number;
 	size: number;
-	data: (Object|null)[];
+	top: number;
+	data: number[];
 }
 ```
 
-A minimal constructor for stacks can be implemented as:
+The **top** attribute is initialized to **-1** to signify that the stack is empty.
 
 ```ts
-//typescript
 const initStack = (size: number): Stack => {
-	const data = [];
-	for (let i = 0; i < size; i ++) {
-		data[i] = null;
-	}
 	return {
-		top: -1,
 		size,
-		data,
-	}
+		top: -1,
+		data: [],
+	};
 }
 ```
 
-The minimal **push** operation can be implemented as:
+A minimal **EMPTY** query is implemented as follows:
 
 ```ts
-//typescript
-const push = (stk: Stack, element: Object): void => {
+const isEmpty = (stk: Stack): bool => {
+	return stk.top === -1;
+} 
+```
+
+The minimal **PUSH** operation which handles **stack overflow** error can be implemented as follows:
+
+```ts
+const push(stk: Stack, element: number): void => {
 	if (stk.top + 1 >= stk.size) {
 		return;
 	}
-	stk.data[stk.top + 1] = element;
-	stk.top++; 
+	stk.top++;
+	stk.data[stk.top] = element;
 }
 ```
 
-The minimal **pop** operation can be defined as:
+The minimal **POP** operation which handles **stack underflow** error can be implemented as follows:
 
 ```ts
-//typescript
-const pop = (stk: Stack): Object => {
-	if (stk.top === - 1) {
+const pop(stk: Stack): void => {
+	if (isEmpty(stk)) {
 		return;
 	}
-	const popped = stk.data[stk.top];
 	stk.top--;
-	return popped;
 }
 ```
-
-### Linked list
-
-A linked list representation of a stack can be implemented with less attribute:
-
-```ts
-// typescript
-type LinkedList = 
-	| { next: LinkedList, data: Object }
-	| null
-```
-
