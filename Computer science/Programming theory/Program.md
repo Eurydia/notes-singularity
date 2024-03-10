@@ -13,7 +13,7 @@ The binary relation $S\subseteq A\times (\overline{A}\cup \{\text{fail}\})^{âˆ—â
 3. $\forall v\in \mathcal{R}(S) : (\forall i \in\mathbb{N}^{+} : i < |v| \implies v_{i}\ne\text{fail})$
 4. $\forall v\in\mathcal{R}(S): (|v|\lt\infty\implies v_{|v|}\in A\cup\text{fail})$
 
-Informally, a **program** $S$ over $A$ assigns at least one [[Background and notations|sequence]] to every state $a\in A$. For every sequence $v\in S(a)$ assigned to a state $a\in A$, $v$ must begin with $a$. The special state $\text{fail}$ can only be the last element of the sequence $v\in S(a)$. The last state of a finite program is either a state $a\in A$ or $\text{fail}$.
+Informally, a **program** $S$ over $A$ assigns at least one [[Singularity/Computer science/Programming theory/Background and notations|sequence]] to every state $a\in A$. For every sequence $v\in S(a)$ assigned to a state $a\in A$, $v$ must begin with $a$. The special state $\text{fail}$ can only be the last element of the sequence $v\in S(a)$. The last state of a finite program is either a state $a\in A$ or $\text{fail}$.
 
 ## Weak program function
 
