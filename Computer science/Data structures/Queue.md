@@ -2,11 +2,9 @@
 
 **Definition**: A **Queue** is an ordered collection of elements. Elements in a queue are removed in the same order in which they are inserted, called **first-in-first-out**. In practice, a queue can be implemented as a specialized **array**.
 
-A stack data structure can be represented with three attributes: queue size, head position, tail position, and an array or other data structure to store the data. 
+A queue can be represented with four attributes: size, head position, tail position, and an array or other data structure to store the data. 
 
-**Definition**: The **ENQUEUE** operation adds an element to the end of the queue.
 
-**Definition**: The **DEQUEUE** operation removes the first element from the queue.
 
 The queue operations have $O(1)$ time complexity.
 
@@ -36,7 +34,7 @@ const initQueue = (size: number): Queue => {
 }
 ```
 
-A minimal **ENQUEUE** implementation adds an element to the **tail** of a queue, and increment itself. If needed **tail** can be reset and wrapped back around to the start of the array.
+**Definition**: The **ENQUEUE** operation adds an element to the end of the queue.
 
 ```ts
 const enqueue = (q: Queue, element: number): void => {
@@ -48,4 +46,17 @@ const enqueue = (q: Queue, element: number): void => {
 } 
 ```
 
-A minimal **DEQUEUE**
+**Definition**: The **DEQUEUE** operation removes the first element from the queue.
+
+```ts
+const dequeue = (q: Queue): number => {
+	const r = q.data[q.head];
+	q.head ++;
+	if (q.head >= q.size) {
+		q.head = 0;
+	}
+	return r;
+}
+```
+
+## Double-ended queue
