@@ -4,13 +4,13 @@
 
 Queues and stacks can be thought of as specialized deques.
 
-## Operations
+## Common operations
 
-**Definition**: The **APPEND** operation adds an element to the back of a deque.
+**Definition**: The **PUSH FRONT** operation adds an element to the back of a deque.
 
-**Definition**: The **PREPEND** operation adds an element to the start of a deque.
+**Definition**: The **PUSH LAST** operation adds an element to the start of a deque.
 
-**Definition**: The **POP FRONT** operation removes the first element of a deque.
+**Definition**: The **POP FIRST** operation removes the first element of a deque.
 
 **Definition**: The **POP LAST** operation removes the last element of a deque.
 
