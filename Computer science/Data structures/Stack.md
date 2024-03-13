@@ -4,10 +4,6 @@
 
 ## Operations
 
-### EMPTY query
-
-**Definition**: The **EMPTY** query checks whether a stack is empty or not.
-
 ### PUSH operation
 
 **Definition**: The **PUSH** operation adds an element onto the top of the stack. **Pushing** an element onto a full stack results in an error called **stack overflow**.
