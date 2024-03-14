@@ -15,44 +15,21 @@ flowchart LR
 
 ### Common operations
 
-There are four common operations on LSL:
-**INSERT AFTER**, **INSERT HEAD**, **REMOVE AFTER**, and **REMOVE HEAD**.
+There are two common operations on LSL:
+**INSERT** and **REMOVE**.
 
-#### INSERT HEAD operation
+#### INSERT operation
 
-**Definition**: The **INSERT HEAD** operation inserts an element at the head of an LSL. 
+**Definition**: The **INSERT** operation inserts an element at the head of an LSL. 
 
-**EMPTY LSL**
+There are three ways an element can be inserted in an LSL. It can be inserted at the head, between elements or at the tail.
 
-Consider an empty LSL, inserting an element "A" to its head:
 
-0. Initial LSL
+**INSERT** at head
 
-	```mermaid
-	flowchart LR
-		L.head-->NIL
-	```
+Consider a LSL, the process of inserting an element "A" to its head:
 
-1. Prepare to insert "A":
-
-	```mermaid
-	flowchart LR
-		L.head-->NIL
-		L.head-.->A-.->NIL
-	```
-
-2. Inserted "A":
-
-	```mermaid
-	flowchart LR
-		L.head-->A-->NIL
-	```
-
-**Non-empty LSL**
-
-Consider a non-empty LSL, inserting an element "A" to its head:
-
-0. Initial LSL:
+0. Initial state:
 
 	```mermaid
 	flowchart LR
@@ -71,6 +48,7 @@ Consider a non-empty LSL, inserting an element "A" to its head:
 
 	```mermaid
 	flowchart LR
+		L.head~~~B
 		L.head-->A-->B-->C[...]-->NIL
 	```
 
@@ -80,7 +58,7 @@ Consider a non-empty LSL, inserting an element "A" to its head:
 
 Consider an non-empty LSL, insert an element "A" after the element "N":
 
-0. Initial LSL:
+0. Initial state:
 
 	```mermaid
 	flowchart LR
@@ -99,6 +77,7 @@ Consider an non-empty LSL, insert an element "A" after the element "N":
 
 	```mermaid
 	flowchart LR
+		N~~~2
 		L.head-->1[...]-->N-->A-->2[...]-->NIL
 	```
 
@@ -127,19 +106,54 @@ Consider a non-empty LSL, remove the first element from it:
 
 	```mermaid
 	flowchart LR
+		L.head~~~A
 		L.head-->B-->C[...]-->NIL
 	```
 
+#### REMOVE AFTER operation
+
+**Definition**: The **REMOVE AFTER** operation removes an element from an LSL which appears after a specific element. Removing an element from an empty LSL causes it to **underflow**.
+
+Consider a non-empty LSL, the process of removing an element "A" which is preceded by "N" goes as follows:
+
+0. Initial state of LSL:
+
+	```mermaid
+	flowchart LR
+		L.head-->1[...]-->N-->A-->2[...]-->NIL
+	```
+
+0. Prepare to remove "A":
+	
+	```mermaid
+	flowchart LR
+		N-.->2
+		L.head-->1[...]-->N-->A-->2[...]-->NIL
+	```
+
+0. Removed "A":
+
+	```mermaid
+	flowchart LR
+		L.head-->1[...]-->N-->2[...]-->NIL
+		N~~~A~~~2
+	```
 
 ## Circular singly linked list
 
 **Definition**: A **circular singly linked list** is a singly linked list whose last element element references the first element instead of NIL.
+
+The term "circular singly linked list" is abbreviated to "CSL."
 
 ```mermaid
 flowchart LR
 	L.head --> 1["L[0]"]-->2["L[1]"]-->3[...]-->4["L[n]"] 
 	4 --> 1
 ```
+
+### Operations
+
+There are four common operations on CSL: ****
 
 ## Linear doubly linked list
 
