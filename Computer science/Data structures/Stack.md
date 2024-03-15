@@ -2,65 +2,67 @@
 
 **Definition**: A **stack** is an ordered collection of elements. Elements of a stack are removed in the reserved order in which they are inserted, called **last-in-first-out**.
 
+```mermaid
+flowchart LR
+	S.top-->C-->B-->A-->NIL
+```
+
+
 ## Operations
 
 ### PUSH operation
 
 **Definition**: The **PUSH** operation adds an element onto the top of the stack. **Pushing** an element onto a full stack results in an error called **stack overflow**.
 
-Consider an empty stack "S" and push "A, B, and C" onto it.
+**Example**: Push three elements onto an empty stack.
 
-0. Initial stack:
+```mermaid
+flowchart LR
+S.top-->NIL
+```
 
-	```mermaid
-	flowchart RL
-	S.top-->NIL
-	```
-
-1. Prepare to push "A":
+1. Prepare to push "A"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 	S.top-.->A-.->NIL
-	S.top-->NIL
+	S.top--xNIL
 	```
 
-1. Pushed "A":
+1. Pushed "A"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-->A-->NIL
 	```
 
-1. Prepare to push "B":
+1. Prepare to push "B"
 
 	```mermaid
-	flowchart RL
-		B-.->A
-		S.top-.->B
-		S.top-->A-->NIL
+	flowchart LR
+		S.top-.->B-.->A
+		S.top--xA-->NIL
 	```
 
-1. Pushed "B":
+1. Pushed "B"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-->B-->A-->NIL
 	```
 
-1. Prepare to push "C":
+1. Prepare to push "C"
 
 	```mermaid
-	flowchart RL
-		C-.->B
-		S.top-.->C
-		S.top-->B-->A-->NIL
+	flowchart LR
+		S.top-.->C-.->B
+		S.top--xB-->A-->NIL
 	```
 
 1. Pushed "C":
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-->C-->B-->A-->NIL
 	```
 
@@ -68,56 +70,54 @@ Consider an empty stack "S" and push "A, B, and C" onto it.
 
 **Definition**: The **POP** operation removes the top-most element from the stack. **Popping** an element from an empty stack results in an error called **stack underflow**.
 
-Consider a stack "S" with three elements "A, B, and C" and pop them from the it.
+**Example**: Popping three elements from a stack.
 
-0. Initial stack:
+```mermaid
+flowchart LR
+	S.top-->C-->B-->A-->NIL
+```
 
-	```mermaid
-	flowchart RL
-		S.top-->C-->B-->A-->NIL
-	```
-
-1. Prepare to pop "C":
+1. Prepare to pop "C"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-.->B
-		S.top-->C-->B-->A-->NIL
+		S.top--xC--xB-->A-->NIL
 	```
 
-2. Popped "C":
+2. Popped "C"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-->B-->A-->NIL
 	```
 
-3. Prepare to pop "B":
+3. Prepare to pop "B"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-.->A
-		S.top-->B-->A-->NIL
+		S.top--xB--xA-->NIL
 	```
 
-4. Popped "B":
+4. Popped "B"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-->A-->NIL
 	```
 
-5. Prepare to pop "A":
+5. Prepare to pop "A"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		S.top-.->NIL
-		S.top-->A-->NIL
+		S.top--xA--xNIL
 	```
 
 6. Popped "A":
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 	S.top-->NIL
 	```

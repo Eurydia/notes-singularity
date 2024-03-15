@@ -2,7 +2,15 @@
 
 **Definition**: A **Queue** is an ordered collection of elements. Elements in a queue are removed in the same order in which they are inserted, called **first-in-first-out**.
 
+```mermaid
+flowchart LR
+	Q.head-->A
+	Q.tail-->C-->B-->A
+```
+
 ## Common operations
+
+There are two common operations on a queue: **ENQUEUE** and **DEQUEUE**.
 
 **Theorem**: The time complexity of **ENQUEUE** and **DEQUEUE** operations is $O(1)$.
 
@@ -14,132 +22,120 @@
 
 **Definition**: The **ENQUEUE** operation adds an element to the end of the queue.
 
-Consider an empty queue "Q", enqueue three elements "A, B, and C" to it.
+**Example**: Enqueue three elements into an empty queue.
 
-0. Initial queue:
-
-	```mermaid
-	flowchart RL
+```mermaid
+flowchart LR
 	Q.head-->NIL
 	Q.tail-->NIL
-	```
+```
 
-1. Prepare to enqueue "A":
+1. Prepare to enqueue "A"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
+		Q.head & Q.tail--xNIL
 		Q.head & Q.tail-.->A
-		Q.head & Q.tail-->NIL
-		NIL ~~~ A
+		
 	```
 
-1. Enqueued "A":
+1. Enqueued "A"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
+		Q.head & Q.tail -->A
+	```
+
+1. Prepare to enqueue "B"
+
+	```mermaid
+	flowchart LR
 		Q.head-->A
-		Q.tail-->A
+		Q.tail-.->B-.->A
+		Q.tail--xA
 	```
 
-1. Prepare to enqueue "B":
+1. Enqueued "B"
 
 	```mermaid
-	flowchart RL
-		B-.->A
-		Q.tail-.->B
-		Q.tail-->A
+	flowchart LR
 		Q.head-->A
-	```
-
-1. Enqueued "B":
-
-	```mermaid
-	flowchart RL
 		Q.tail-->B-->A
-		Q.head-->A
 	```
 
-1. Prepare to enqueue "C":
+1. Prepare to enqueue "C"
 
 	```mermaid
-	flowchart RL
-		C-.->B
-		Q.tail-.->C
-		Q.tail-->B-->A
+	flowchart LR
 		Q.head-->A
+		Q.tail-.->C-.->B
+		Q.tail--xB-->A
 	```
 
-1. Enqueued "C":
+1. Enqueued "C"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		Q.head-->A
 		Q.tail-->C-->B-->A
 	```
 
 ### DEQUEUE operation
 
-**Definition**: The **DEQUEUE** operation removes the first element from the queue.
+**Definition**: The **DEQUEUE** operation removes the element at the head of a queue.
 
-Consider a queue "Q", dequeue three elements "A, B, and C" from it.
+**Example**: Dequeue three elements into a queue.
 
-0. Initial queue:
+```mermaid
+flowchart LR
+	Q.head-->A
+	Q.tail-->C-->B-->A
+```
+
+1. Prepare to dequeue "A"
 
 	```mermaid
-	flowchart RL
-		Q.head-->A
+	flowchart LR
+		Q.head--xA
 		Q.tail-->C-->B-->A
-	```
-
-1. Prepare to dequeue "A":
-
-	```mermaid
-	flowchart RL
-		Q.head-->A
 		Q.head-.->B
-		Q.tail-->C-->B-->A
 	```
-	
-1. Dequeued "A":
+
+1. Dequeued "A"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
 		Q.head-->B
 		Q.tail-->C-->B
-		B~~~A
 	```
 
-1. Prepare to dequeue "B":
+1. Prepare to dequeue "B"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
+		Q.head--xB
+		Q.tail-->C-->B
 		Q.head-.->C
-		Q.head-->B
-		Q.tail-->C-->B
-	```
-	
-1. Dequeued "B":
-
-	```mermaid
-	flowchart RL
-		Q.head-->C
-		Q.tail-->C
-		C~~~B
 	```
 
-1. Prepare to dequeue "C":
+1. Dequeued "B"
 
 	```mermaid
-	flowchart RL
-		Q.head & Q.tail-.->NIL
-		Q.head & Q.tail-->C
-		NIL~~~C
+	flowchart LR
+		Q.head & Q.tail -->C
 	```
 
-1. Dequeued "C":
+1. Prepare to dequeue "C"
 
 	```mermaid
-	flowchart RL
+	flowchart LR
+		Q.head & Q.tail--xC
+		Q.head & Q.tail-.-> NIL
+	```
+
+1. Dequeued "C"
+
+	```mermaid
+	flowchart LR
 		Q.head & Q.tail-->NIL
-		NIL~~~C
 	```
