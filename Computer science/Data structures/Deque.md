@@ -14,7 +14,7 @@ flowchart LR
 
 ### Queries
 
-There are four common queries on a deque: **HEAD**, **TAIL**, **SIZE**, and **EMPTY**. These queries have $O(1)$ time complexity.
+The queries have $O(1)$ time complexity.
 
 **Definition**: The **HEAD** query returns the element at the head of deque without removing it.
 
@@ -26,7 +26,7 @@ There are four common queries on a deque: **HEAD**, **TAIL**, **SIZE**, and **EM
 
 ### Operations
 
-There are four common operations on deques; **PUSH HEAD**, **POP HEAD**, **PUSH TAIL**, and **POP TAIL**. These operations have $O(1)$ time complexity.
+The operations have $O(1)$ time complexity.
 
 **Definition**: The **PUSH HEAD** operation inserts an element into the head of a deque. 
 

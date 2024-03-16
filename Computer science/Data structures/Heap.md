@@ -1,14 +1,12 @@
 # Heap
 
-**Definition**: A **heap** is a tree-based data structure that satisfies the heap property.
+**Definition**: A **heap** is a tree-based data structure that satisfies the one of the **heap** properties.
 
 **Definition**: The node with no parent is called the **root**.
 
 **Definition**: A node with no children is called a **leaf**.
 
-**Definition**: $K$-ary heaps are heaps  each node have $K$ children. 
- 
-**Definition**: A special term is given to $2$-ary heaps called **binary heap**.
+**Definition**: $K$-ary heaps are heaps for which each node have $K$ children. A special term is given to $2$-ary heaps called **binary heap**.
 
 **Definition**: A **min heap** is a heap which satisfy the **min heap property**; for every node $N$ and its parent $N_{P}$ the key of $N$ is greater than or equal to the key of $N_{P}$.
 
