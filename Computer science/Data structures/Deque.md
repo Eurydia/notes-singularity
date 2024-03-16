@@ -4,26 +4,35 @@
 
 Queues and stacks can be thought of as specialized deques.
 
+```mermaid
+flowchart LR
+	D.head-->A<-->B<-->C
+	D.tail-->C
+```
 
+## Queries and operations
 
-## Common operations
+### Queries
 
-The time complexity of deque operations is $O(1)$ with the assumption that there is no memory allocation and deallocation cost overhead.
+There are four common queries on a deque: **HEAD**, **TAIL**, **SIZE**, and **EMPTY**. These queries have $O(1)$ time complexity.
 
-Indexing a random element of a deque has $O(n)$ time complexity where $n$ is the size of the deque.
+**Definition**: The **HEAD** query returns the element at the head of deque without removing it.
 
-### PUSH FRONT operastion
+**Definition**: The **TAIL** query returns the element at the tail of deque without removing it.
 
-**Definition**: The **PUSH FRONT** operation inserts an element into the head of a deque.
+**Definition**: The **SIZE** query returns the number of elements in a deque.
 
-### PUSH LAST operation
+**Definition**: The **EMPTY** query checks whether a deque has any element in it or not.
 
-**Definition**: The **PUSH LAST** operation inserts an element into the tail of a deque.
+### Operations
 
-### POP FIRST operation 
+There are four common operations on deques; **PUSH HEAD**, **POP HEAD**, **PUSH TAIL**, and **POP TAIL**. These operations have $O(1)$ time complexity.
 
-**Definition**: The **POP FIRST** operation removes an element from the head of a deque.
+**Definition**: The **PUSH HEAD** operation inserts an element into the head of a deque. 
 
-### **POP LAST** operation
+**Definition**: The **PUSH TAIL** operation inserts an element into the tail of a deque.
 
-**Definition**: The **POP LAST** operation removes an element from the tail of a deque.
+**Definition**: The **POP HEAD** operation removes an element from the head of a deque.
+
+**Definition**: The **POP TAIL** operation removes an element from the tail of a deque.
+
