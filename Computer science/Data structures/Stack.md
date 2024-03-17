@@ -1,29 +1,21 @@
 # Stack
 
-**Definition**: A **stack** is an ordered collection of elements. Elements of a stack are removed in the reserved order in which they are inserted, called **last-in-first-out**.
+## Overview
+
+**Definition**: A **stack** is an abstract data structure which implements a sequential collection. Elements are removed from a stack in the reserved order in which they are added.
 
 ```mermaid
 flowchart LR
 	S.top-->C-->B-->A-->NIL
 ```
 
-## Queries and operations
+## Operations
 
-### Queries
+**Definition**: The **PUSH** operation adds an element onto the top of the stack. **PUSH** has $O(1)$ time and space complexity.
 
-There are three common queries on a stack: **SIZE**, **PEEK**, and **EMPTY**. The queries have $O(1)$ time complexity and $O(1)$ space complexity.
+**Definition**: The **POP** operation removes the most recently added element. **POP** has $O(1)$ time and space complexity.
 
-**Definition**: The **SIZE** query returns the number of elements in the stack.
+**Definition**: Pushing an element onto a full stack results in a **stack overflow** error.
 
-**Definition**: The **PEEK** query returns the top-most element of a stack without removing it.
-
-**Definition**: The **EMPTY** query checks whether a stack contains any element or not.
-
-### Operations
-
-There are two common operations on a stack: **PUSH** and **POP**. Both operations have $O(1)$ time complexity and $O(1)$ space complexity.
-
-**Definition**: The **PUSH** operation adds an element onto the top of the stack. **Pushing** an element onto a full stack results in an error called **stack overflow**.
-
-**Definition**: The **POP** operation removes the top-most element from the stack. **Popping** an element from an empty stack results in an error called **stack underflow**.
+**Definition**: Popping an element from an empty stack results in a **stack underflow** error.
 

@@ -1,3 +1,0 @@
-# B tree
-
-## B+ tree
