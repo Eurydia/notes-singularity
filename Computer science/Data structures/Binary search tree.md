@@ -8,15 +8,13 @@
 
 ```mermaid
 flowchart TD
-	8<-->3 & 10
-	3<-->1 & 6
-	6<-->4 & 7
-	10~~~12:::hidden
-	10<-->14 
-	14<-->13 
-	14~~~15:::hidden
-
-	classDef hidden display:none;
+	8---3 & 10
+	3---1 & 6
+	6---4 & 7
+	10---12[NIL]
+	10---14 
+	14---13 
+	14---15[NIL]
 ```
 
 ## Operations
@@ -39,7 +37,7 @@ This process is repeated until the key is found or the remaining subtree is **NI
 
 #### PREDECESSOR
 
-**Definition**: The **PREDECESSOR** operation is a specialized **SEARCH**. It looks for a the greatert key which is smaller than a given node.
+**Definition**: The **PREDECESSOR** operation is a specialized **SEARCH**. It looks for a the greatest key which is smaller than a given node.
 
 ### INSERT 
 
