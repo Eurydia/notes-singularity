@@ -151,7 +151,7 @@ $$
 
 evaluates to an integer $k$ where $\nexists i\in[m,k-1]\subset\mathbb{Z} : p(i)$.
 
-### Select
+### Search Notation
 
 Given a logical function $p:[m,n]\to\mathbb{L}$, where $m,n\in\mathbb{Z}$ such that $m\le n$, the expression
 
