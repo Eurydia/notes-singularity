@@ -40,7 +40,7 @@ Operations on an array $A\in T^{m\ldots n}$ includes, but not limited to;
 
 ### Matrix
 
-Given an arbitrary type $T$, a row-major matrix containing elements of type $T$ is denoted by "$T^{m\ldots n\times i\ldots j}$" where $m,n\in\mathbb{Z}$ denotes the index of the first and last row, and $ I,j\in\mathbb{Z}$ denotes the index of the first and last column, respectively. It is also possible to abbreviate "$T^{1\ldots n\times 1\ldots j}$" to "$T^{n\times j}$."
+Given an arbitrary type $T$, a row-major matrix containing elements of type $T$ is denoted by "$T^{m\ldots n\times i\ldots j}$" where $m,n\in\mathbb{Z}$ denotes the index of the first and last row, and $i,j\in\mathbb{Z}$ denotes the index of the first and last column, respectively. It is also possible to abbreviate "$T^{1\ldots n\times 1\ldots j}$" to "$T^{n\times j}$."
 
 Operations on a matrix $A\in T^{m\ldots n\times i\ldots j}$ includes, but not limited to;
 - indexing, denoted by "$A[r,c]$" for $r,c\in\mathbb{Z}$ such that $m\le r\le n$ and $i\le c\le j$.
@@ -53,7 +53,7 @@ Given unique labels $l_{1},l_{2},\ldots$ and arbitrary types $T_{1},T_{2},\ldots
 
 Operations on a record $A\in\text{rec}(l : T)$ includes, but not limited to;
 - assignment, denoted by "$A.l = t$" for  $t\in T$, and
-- indexing, denoted by "$A.l$."
+- field access, denoted by "$A.l$."
 
 (*I could not find a notation which explicitly defines an object of type record.*)
 
@@ -149,7 +149,7 @@ $$
 \text{select}_{i=m}^{n}\;p(i)\tag{Expr. 8}
 $$
 
-evaluates to an integer $k$ where $\nexists i\in[m,k-1]\subset\mathbb{Z} : p(i)$.
+evaluates to an integer $k$ where $\nexists i\in[m,k-1](i\in\mathbb{Z}) : p(i)$.
 
 ### Search Notation
 
@@ -159,5 +159,5 @@ $$
 \text{search}_{i=m}^{n}\;p(i)\tag{Expr. 9}
 $$
 
-evaluates to a $2-$tuple $(l,k)$, where $l\in\mathbb{L}$ and $l$ implies that $\nexists i\in[m,k-1]\subset\mathbb{Z} : p(i)$.
+evaluates to a $2-$tuple $(l,k)$, where $l\in\mathbb{L}$ and $l$ implies that $\nexists i\in[m,k-1](i\in\mathbb{Z}) : p(i)$.
 
