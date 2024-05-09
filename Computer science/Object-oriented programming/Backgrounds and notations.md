@@ -1,12 +1,12 @@
-# A Tentative Summary of  OOP Course Notations
+# Backgrounds and notations
 
-This summary attempts to collect notations in the object-oriented programming course. The motivation for this summary ensure that notations are well-defined and, more importantly, well-explained, so further applications are built on a solid foundation.
+This summary aims to collect notations in the object-oriented programming course. The motivation for this summary ensure that notations are well-defined and, more importantly, well-explained, so further applications are built on a solid foundation.
 
-## Data Types
+## Data types
 
-Data types is an inarguable computer science-centric term, but they are structures built on well-known sets. One can make a reasonable conclusion that data types are sets.
+Data type is a rather computer science-centric term, but in this summary, we will talk about them as in terms of sets to keep explanation brief and simple.
 
-### Primitive Data Types
+### Primitive data types
 
 The common primitive data types include, but are not limited to;
 - **the set of natural number** excluding $0$, denoted by $\mathbb{N}^{+}:=\{1,2,3,\ldots\}$,
@@ -28,11 +28,11 @@ A sequence, which contains elements of type $\mathbb{T}$, is denoted by $\mathbb
 - **rational sequence**: $\langle \frac{1}{2}, \frac{1}{3},\frac{1}{4},\frac{1}{5} \rangle\in(\mathbb{Q})^{*}$, and
 - **irrational sequence**: $\langle\pi,e,\sqrt{2}\rangle\in(\mathbb{Q}^{*})^{*}$.
 
-Character sequences $(\mathbb{C}\text{h})^{*}$ are given special a name "string" its type is abbreviated to $\mathbb{S}$. In addition, quotation marks are used to explicitly list elements of a string. For example $\text{``}Hello\text{''}$ is equivalent to $\langle H,e,l,l,o\rangle$ .
+Character sequences $(\mathbb{C}\text{h})^{*}$ are given special a name "string" and its type is abbreviated to $\mathbb{S}$. In addition, quotation marks are used to explicitly list elements of a string. For example $\text{``}Hello\text{''}$ is equivalent to $\langle H,e,l,l,o\rangle$ .
 
 *(Here I wanted to emphasize that $\mathbb{T}$ is a generic type, and that, in practice, concrete types such as $\mathbb{N},\mathbb{L},\mathbb{R}$ are used instead.)*
 
-Operations on a sequence includes, but not limited to;
+Operations on a sequence include but are not limited to;
 
 **Concatenation**
 
@@ -43,13 +43,13 @@ $\oplus: (\mathbb{T}^{*}\times \mathbb{T}^{*})\to \mathbb{T}^{*}$. It joins two 
 
 **Cardinality**
 
-Cardinality is a unary operator $|\bullet|:\mathbb{T}^{*}\to\mathbb{N}$. It yields the number of elements in a sequence. For example, the cardinality of a sequence $A$ is denoted by $|A|$.
+Cardinality is a unary operator $|\bullet|:\mathbb{T}^{*}\to\mathbb{N}$. It yields the number of components in a sequence. For example, the cardinality of a sequence $A$ is denoted by $|A|$.
 
 *(I really dislike using "$|\bullet|$" to denote the cardinality. I know there is a more intuitive and elegant way to express it, but I could not find it. I am also not happy about the use of the word "yield.")*
 
 **Indexing**
 
-Let $A:=\langle a_{1},a_{2},\ldots, a_{n}\rangle$ be a sequence and $k$ be a natural number where $1\le k\le n$, indexing the $k-$th element of the sequence $A$ is denoted by $A[k]$.
+Let $A:=\langle a_{1},a_{2},\ldots, a_{n}\rangle$ be a sequence and $k$ be a natural number where $1\le k\le n$. Indexing the $k-$th element of the sequence $A$ is denoted by $A[k]$.
 
 *(Here, this operator implies too much on the behavior of sequences and I am not sure how much I should introduce. Generally, sequences are considered to be an ordered collection of items, which is why it is possible to "index" a particular element.)*
 
@@ -57,11 +57,11 @@ Let $A:=\langle a_{1},a_{2},\ldots, a_{n}\rangle$ be a sequence and $k$ be a nat
 
 An array of length $m\in\mathbb{N}$ containing elements of type $\mathbb{T}$ is denoted by $\mathbb{T}^{m}$. Elements of an array are explicitly listed using angle brackets; $\langle t_{1}, t_{2},\ldots, t_{n}\rangle$. In practice, arrays generally have a fixed size, thus elements cannot be added to or removed from an array. The different notations are introduced for arrays and sequences to capture their real world properties. 
 
-Operations on an array includes, but not limited to;
+Operations on an array include but are not limited to;
 
 **Cardinality** 
 
-Cardinality operator on arrays behaves similarly to cardinality operator on sequences. Since arrays contains a fixed number of elements, the cardinality of an array $A\in\mathbb{T}^{m}$, denoted by $|A|$, is always $m$.  
+The cardinality operator on arrays behaves similarly to the cardinality operator on sequences. Since arrays contains a fixed number of elements, the cardinality of an array $A\in\mathbb{T}^{m}$, denoted by $|A|$, is always $m$.  
 
 **Indexing**
 
@@ -70,22 +70,20 @@ Indexing arrays behaves similarly to indexing sequences.
 ### Records
 
 A record is denoted by $\text{rec}(l_{1}:\mathbb{T}_{1}, l_{2}:\mathbb{T}_{2},\ldots,l_{n}:\mathbb{T}_{n})$ where $l_{1},l_{2},\ldots,l_{n}$ are unique field labels and $\mathbb{T}_{1},\mathbb{T}_{2},\ldots,\mathbb{T}_{n}$ are types. Followed are the examples on the different definitions of record;
-- $\text{rec}(re:2,im:9)\in\text{rec}(re:\mathbb{R},im:\mathbb{R})$, and
-- $\text{rec}(name: \text{``}John\text{''}, age:28)\in\text{rec}(name:\mathbb{S},age:\mathbb{N})$.
+- $\text{rec}(re:2,im:9)$ belongs to the record type $\text{rec}(re:\mathbb{R},im:\mathbb{R})$, and
+- $\text{rec}(name: \text{``}John\text{''}, age:28)$ belongs to the record type $\text{rec}(name:\mathbb{S},age:\mathbb{N})$.
 
-*(I think additional details on the anatomy of the record type could be explained better.)*
-
-Operations on a record includes, but not limited to;
+Operations on a record include but are not limited to;
 
 **Field access**
 
-Consider the record $a:=\text{rec}\left(x:10\right)$ where $a\in\text{rec}(x:\mathbb{N})$, access the label $x$ of $a$ is denoted by $a.x$ where $(a.x)\in\mathbb{N}$.
+Consider the record $a:=\text{rec}\left(x:10\right)$ where $a\in\text{rec}(x:\mathbb{N})$, we access the label $x$ of $a$ by $a.x$ where $(a.x)\in\mathbb{N}$.
 
 *(This explanation is not clear enough, essentially, a record could be thought of as a collection of label-value pairs. On a record, the label is used to access its corresponding value. In a way the record itself is a mapping which assigns a value to each of its label.)*
 
 **Field assignment**
 
-Field assignment updates the value of a label on a record with a new value. For example, consider the record $a:=\text{rec}(x:10)$ where $a\in\text{rec}(x:\mathbb{N})$, let $a.x=9$ denote assigning $9$ to the label $x$ of the record $a$, doing so generate a new record $b\in\text{rec}(x:\mathbb{N})$ where $b.x=9$.
+Field assignment updates the value of a label on a record with a new value. For example, consider the record $a:=\text{rec}(x:10)$ where $a\in\text{rec}(x:\mathbb{N})$, let $a.x:=9$ denote assigning $9$ to the label $x$ of the record $a$, doing so generate a new record $b\in\text{rec}(x:\mathbb{N})$ where $b.x=9$.
 
 ### Enumerators
 
@@ -93,8 +91,7 @@ An enumerator, which contains elements of type $\mathbb{T}$, is denoted by $\tex
 
 Due to their nature, there is no motivation to introduce a notation  which would explicitly list elements of an enumerator, but to illustrate its application, let's assume we have the following enumerator $A:=\{1,2,3,1,2,3\}$ where $A\in\text{enor}(\mathbb{N})$, the sum of $A$ is obtained with $\sum\limits_{a\in A}a$, which expands to $1+2+3+1+2+3$.
 
-
-Operations on an enumerator includes, but not limit to;
+Operations on an enumerator include but are not limit to;
 
 **Cardinality**
 
@@ -130,7 +127,7 @@ expands to
 
 $$
 \sum\limits_{i=m}^{n} \begin{cases}
-f(i) &\text{if } p(i),\\
+f(i) &\text{if } p(i)=true,\\
 0 &\text{otherwise}.
 \end{cases}
 $$
@@ -149,7 +146,7 @@ $$
 \sum\limits_{i=m}^{k} f(i)
 $$
 
-where $k=\min\{i\in[m,n] : \neg p(i)\}$. That is, the summation runs until the smallest index $k$ in which $p(k+1)$ does not hold.
+where $k=\min\{i\in[m,n] :p(i)=true\}$. That is, the summation runs until the smallest index $k$ in which $p(k+1)$ does not hold.
 
 ### Big Notations
 
@@ -191,7 +188,7 @@ evaluates to a triple
 
 $$(l,f(k),k)$$
 
-where $l\in\mathbb{L}$, $f(k)\in H$, and $k\in[m,n]$ such that $l\implies f(k)=\max H$.
+where $l\in\mathbb{L}$, $f(k)\in H$, and $k\in[m,n]$ such that $(l=true)\implies f(k)=\max H\land p(k)=true$.
 
 ### Select Notation
 
@@ -201,7 +198,7 @@ $$
 \mathrel{\substack{n\\\text{select}\\ i=m}} p(i)
 $$
 
-evaluates to $k$ where $k\in[m,n]$ such that $k=\max\{i\in[m,n] : p(i)\}$.
+evaluates to $k$ where $k\in[m,n]$ such that $k=\max\{i\in[m,n] : p(i)=true\}$.
 
 ### Search Notation
 
@@ -215,7 +212,7 @@ evaluates to a pair
 
 $$(l,k)$$
 
-where $l\in\mathbb{L}$ and $k\in[m,n]$ such that $l\implies k=\max\{i\in[m,n] : p(i)\}$.
+where $l\in\mathbb{L}$ and $k\in[m,n]$ such that $(l=true)\implies k=\max\{i\in[m,n] : p(i)=true\}$.
 
 ## Enumerator-based Notations
 
@@ -324,5 +321,5 @@ evaluates to a triple
 
 $$(l,f(e), t')$$
 
-where $l\in\mathbb{L}$, $f(e)\in H$, and $t'\in\text{enor}(\mathbb{E})$ such that $l\implies f(e)=\max H$ and $t'$ contains the unconsumed elements of $t$.
+where $l\in\mathbb{L}$, $f(e)\in H$, and $t'\in\text{enor}(\mathbb{E})$ such that $(l=true)\implies f(e)=\max H\land p(e)=true$ and $t'$ contains the unconsumed elements of $t$.
 
