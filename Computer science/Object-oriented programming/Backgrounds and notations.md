@@ -110,7 +110,7 @@ $$
 $$
 
 expands to
-
+	
 $$
 f(m)+f(m+1)+\ldots+f(n-1)+f(n).
 $$

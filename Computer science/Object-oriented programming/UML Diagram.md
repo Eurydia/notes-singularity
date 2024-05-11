@@ -1,16 +1,21 @@
-# Class diagrams
+# UML diagram
 
-*Class diagrams* provide a visual representation to the ways classes interact in a program. One important distinction to make is that class diagrams are not the same as *object diagrams*. Class diagrams are more abstract view when compared to object diagrams.
+## Class diagrams
+
+Class diagrams provide a visual representation to the ways classes interact in a program. One important distinction to make is that class diagrams are not the same as *object diagrams*. Class diagrams are more abstract view when compared to object diagrams.
 
 Consider the following example with two classes *Person* and *Bicycle* where a person owns bicycle. In this example, let's consider two people A and B. Person A has two bicycle, while Person B has one bicycle.
 
 Using an *object diagram*, we can represent the relations as follows;
 
 ```mermaid
-flowchart TD
-
-1[Bike 1 : Bicycle] & 2[Bike 2 : Bicycle] -->|Owns by| 3[Person A : Person]
-4[Bike 3 : Bicycle] -->|Owns by| 5[Person B : Person]
+flowchart LR
+subgraph Group A
+	1[Bike 1 : Bicycle] & 2[Bike 2 : Bicycle] -->|Owns by| 3[Person A : Person]
+end
+subgraph Group B
+	4[Bike 3 : Bicycle] -->|Owns by| 5[Person B : Person]
+end
 ```
 
 With a *class diagrams*, we do not have access to each instance of *Person* nor *Bicycle*. Thus their representation is more generalized and abstract.
