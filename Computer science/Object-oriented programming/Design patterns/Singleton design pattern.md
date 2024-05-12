@@ -4,7 +4,7 @@
 
 **Singleton design pattern** is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
 
-This comes in handy when there is no benefit to have multiple instances of a class, so we can keep reusing one instance throughout the life cycle of our program.
+This pattern is useful when there is no benefit to have multiple instances of a class, so we can keep reusing one instance throughout the life cycle of our program.
 
 ## Practical example
 
@@ -17,8 +17,19 @@ class Utility:
 	def formatBool(...)
 ```
 
-We can have as many instances of the *Utility* classes as we want, but there is no distinction between one instance and another. In fact, every instance  of *Utility* behave in the same way, and if we have more than one instance, we are wasting precious memory with unnecessary instantiations.
+We can have many instances of the *Utility*, but there is no distinction between one instance and another. In fact, every instance  of *Utility* behave in the same way, and if we have more than one instance, we are wasting precious memory with unnecessary instantiations.
 
-```python
+## Structure
 
+The structure of a singleton class consists of three major components; a private constructor, a class-level variable *instance* to keep track of the instance, and a public method *GetInstance* to instantiate or access the sole instance of the class.
+
+```mermaid
+classDiagram
+class X {
+	<<singleton>>
+	- X instance = null [static]
+	+ GetInstance() X [static]
+}
 ```
+
+The method *GetInstance* initializes an object or return the instance if it exists.
