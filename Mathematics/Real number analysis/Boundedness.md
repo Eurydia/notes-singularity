@@ -77,6 +77,10 @@ Similarly, if the infimum of a set exists, it is unique.
 
 ## Observation
 
-It can be observed that if the **maximal element** of a set exists, it is also the **supremum**.
+*The supremum is also the maximal element of a set.*
+
+We can observe that if the **maximal element** of a set exists, it is also the **supremum**.
 
 Let a set $H\subseteq\mathbb{R}$ be a non-empty set, and suppose, for the purpose of contradiction, that $K\in H$ is the **maximal element** of $H$, but $K\ne\sup H$. There must exist a real number $x$, such that $x\lt K$. However, if $x\lt K$, then $x$ cannot be the **supremum**. Thus, such a number $x$ cannot exist, and $K$ must also be the **supremum**.
+
+This observation also holds for infimum and minimal element.
