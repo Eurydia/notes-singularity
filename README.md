@@ -1,1 +1,11 @@
-IyBTaW5ndWxhcml0eQoKU2luZ3VsYXJpdHkgaXMgYSBkaWdpdGFsIGdhcmRlbiBJIHN0YXJ0ZWQgd2l0aCBvbmUgZ29hbCBpbiBtaW5kOyB0byBjb2xsZWN0IGV2ZXJ5dGhpbmcgSSBoYXZlIGV2ZXIga25vd24uIFRoZSBtb3RpdmF0aW9uIHdhcyBzaW1wbGUuIExlYXJuaW5nIGlzIGRpZmZpY3VsdCwgYnV0IGZvcmdvdHRpbmcgaXMgZWFzeS4KCkkgaGF2ZSB3YXRjaGVkIGEgdmlkZW8gYnkgW0NodWJieUVtdV0oaHR0cHM6Ly93d3cueW91dHViZS5jb20vY2hhbm5lbC9VQ0tPdk9hSnY0R0stb0RxeC1zajdWVmcpIHRoYXQgSSBoYXZlIHNpbmNlIGZvcmdvdCB0aGUgbmFtZSBvZi4gRnJvbSBpdCwgb25lIHRoaW5nIERyLiBCZXJuYXJkIHNhaWQgc3R1Y2sgd2l0aCBtZTsgIndoYXQgaXMgZm9yZ290dGVuIGJlY29tZXMgbmV3IGFnYWluLiIKCkl0IHRha2VzIHRpbWUgdG8gbGVhcm4sIGFuZCBpZiB3ZSBmb3JnZXQsIHdlIG5lZWQgdG8gaW52ZXN0IG1vcmUgdGltZSB0byByZS1sZWFybi4gV2l0aCBTaW5ndWxhcml0eSwgSSBjYW4gc2xlZXAgZWFzeSBrbm93aW5nIHRoYXQgSSB3aWxsIG5ldmVyIGZvcmdldCwgbm9yIHdpbGwgSSBldmVyIGhhdmUgdG8gcmUtbGVhcm4gYW55dGhpbmcsIGV2ZXIgYWdhaW4uCgojIyBCYWNrdXAgcmVkdW5kYW5jeQoKT3JpZ2luYWxseSwgU2luZ3VsYXJpdHkgd2FzIGFuIE9ic2lkaWFuIHZhdWx0LCBidXQgYXMgdGhlIHNheWluZyBnb2VzICJvbmUgaXMgbm9uZSwgdHdvIGlzIG9uZSwiIGl0IGRvZXMgbm90IGh1cnQgdG8gaGF2ZSBzb21lIHJlZHVuZGFuY3kgaW4gcGxhY2UuIEluIHRoZSB3b3JzdCBjYXNlIHNjZW5hcmlvIHdoZW4gbXkgaGFyZCBkcml2ZSBpcyBjb3JydXB0ZWQsIHRoaXMgcmVwb3NpdG9yeSB3aWxsIGJlIG9uZSBvZiB0aGUgYmFja3Vwcy4K
+# Singularity
+
+Singularity is a digital garden I started with one goal in mind; to collect everything I have ever known. The motivation was simple because Learning is difficult, and forgotting is easy.
+
+I have watched a video by [ChubbyEmu](https://www.youtube.com/channel/UCKOvOaJv4GK-oDqx-sj7VVg) that I have since forgot the name of. From it, one thing Dr. Bernard said stuck with me; "what is forgotten becomes new again."
+
+It takes time to learn, and if we forget, we need to invest more time to re-learn. With Singularity, I can sleep easy knowing that I will never forget, nor will I ever have to re-learn anything, ever again.
+
+## Backup redundancy
+
+Originally, Singularity was an Obsidian vault, but as the saying goes "one is none, two is one," it does not hurt to have some redundancy in place. In the worst case scenario when my hard drive is corrupted, this repository will be one of the backups.
