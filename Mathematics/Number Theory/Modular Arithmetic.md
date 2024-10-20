@@ -36,3 +36,37 @@ We also have the properties of the operations,
 - $\overline{0}$ is the additive identity,
 - $\overline{1}$ is the multiplicative identity, and
 - $\overline{-a}$ is the additive inverse.
+
+## Linear Congruences
+
+In the previous section, we discussed about the properties of the operations on residue classes, however, we did not discuss the property of division.
+
+**Definition**: Given a modulus $m$, for $\overline{a},\overline{b}\in\mathbb{Z}_{m}$, $\frac{\overline{a}}{\overline{b}}$ is the unique residue class $\overline{x}\in\mathbb{Z}_{m}$ such that $\overline{a\cdot x}=\overline{b}$.
+
+**Definition**: We say that the congruence of the form $ax\equiv b\mod m$, where $x$ is the only unknown variable, is a *linear congruence*.
+
+By expanding the definition of the congruence statement, we have 
+
+$$m\mid b-ax.$$
+
+
+We can observe their relations by expanding the definition further, we have
+
+$$\exists y\in\mathbb{Z}:my = b-ax.$$ 
+
+
+Finally, if we rearrange the equation, we have 
+
+$$my-ax=b.$$
+
+We can observe that this is a linear Diophantine equation and we take the same approach to solve for $x$.
+
+**Theorem**: Given a modulus $m$, the quotient $\frac{\overline{b}}{\overline{a}}$ exists if and only if $m$ and $a$ are co-primes.
+
+**Definition**: Given a modulus $m$, we denote the *multiplicative inverse* of $\overline{a}\in\mathbb{Z}_{m}$ with $(\overline{a})^{-1}$ or $\frac{\overline{1}}{\overline{a}}$. Additionally, if $\overline{a}$ has a multiplicative inverse, we say that $\overline{a}$ is *invertible*.
+
+**Theorem**: Given $m$, if the quotient $\frac{\overline{b}}{\overline{a}}$ exists, then $\overline{a}$ is invertible since $\frac{\overline{b}}{\overline{a}}=\overline{b}\cdot(\overline{a})^{-1}$.
+
+**Theorem**: If $m$ is a prime number, then all residue class in $\mathbb{Z}_{m}\setminus\{\overline{0}\}$ are invertible.
+
+Informally, if we have a prime modulus, then we can divide by any element in the residue classes, except $\overline{0}$.
