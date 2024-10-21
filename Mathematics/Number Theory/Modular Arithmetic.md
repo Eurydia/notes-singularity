@@ -70,3 +70,14 @@ We can observe that this is a linear Diophantine equation and we take the same a
 **Theorem**: If $m$ is a prime number, then all residue class in $\mathbb{Z}_{m}\setminus\{\overline{0}\}$ are invertible.
 
 Informally, if we have a prime modulus, then we can divide by any element in the residue classes, except $\overline{0}$.
+
+## Chinese Remainder Theorem
+
+We can also solve multiple congruences with multiple moduli at same time. For example, given two moduli $m,n\in\mathbb{N}^{+}$ and $a,b\in\mathbb{Z}$, it is possible to determine $x$ from the following congruences;
+
+$$
+\begin{cases}
+x\equiv a\mod m\\
+x\equiv b\mod n
+\end{cases}
+$$
