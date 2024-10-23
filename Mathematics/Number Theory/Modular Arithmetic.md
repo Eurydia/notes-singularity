@@ -73,11 +73,33 @@ Informally, if we have a prime modulus, then we can divide by any element in the
 
 ## Chinese Remainder Theorem
 
-We can also solve multiple congruences with multiple moduli at same time. For example, given two moduli $m,n\in\mathbb{N}^{+}$ and $a,b\in\mathbb{Z}$, it is possible to determine $x$ from the following congruences;
+We can also solve multiple congruences with multiple moduli at same time. For example, given two moduli $m,n\in\mathbb{N}^{+}$ and $a,b\in\mathbb{Z}$, it is possible to determine $x$ from the following system of two congruences;
 
 $$
 \begin{cases}
 x\equiv a\mod m\\
 x\equiv b\mod n
 \end{cases}
+$$
+
+
+**Theorem**: (Chinese reminder theorem) The above-mentioned system of congruence has a solution if, and only if $\gcd(m,n)\mid b-a$. Additionally, the set of solutions is exactly a residue class of $lcm(m,n)$.
+
+Next, we will talk about the steps necessary to solve the congruence system. 
+
+We start by expanding the system using the definition of divisor and modulo, after which we have;
+
+$$
+\begin{align*}
+x-a&=um\\
+x-b&=vn
+\end{align*}
+$$
+
+where $u,v\in\mathbb{Z}$. We can rearrange the equations to eliminate $x$ from our equations to obtain;
+
+$$
+\begin{align*}
+um-vn=b-a
+\end{align*}
 $$
