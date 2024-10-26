@@ -49,22 +49,39 @@ We can discuss about the monotonicity of a function by looking at its first-orde
 
 **Definition**: We define $\pi:=2\alpha$ where $\cos\alpha=0$.
 
-**Definition**: We the inverse sine function to be 
+**Definition**: We define the inverse of the sine function to be 
 
-$$\arcsin:=\sin^{-1}_{\mid\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]}:[-1,1]\to\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right].$$
+$$\begin{align*}
+\arcsin&:[-1,1]\to\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right],\\
+\arcsin&:=\left(\sin\mid_{\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]}\right)^{-1}.
+\end{align*}$$
 
 **Definition**: We define the inverse of the cosine function to be 
 
-$$\arccos :=\cos^{-1}_{\mid[0,\pi]}:[-1,1]\to[0,\pi].$$
+$$\begin{align*}
+\arccos&:[-1,1]\to[0,\pi],\\
+\arccos&:=\left(\cos|_{[0,\pi]}\right)^{-1}.
+\end{align*}$$
 
 **Definition**: We define the inverse of the tangent function to be 
 
-$$\begin{align*}\arctan:=\tan^{-1}_{\bigg|\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)}: \mathbb{R}\to\left( -\frac{\pi}{2}, \frac{\pi}{2} \right).\end{align*}$$
+$$\begin{align*}
+\arctan&: \mathbb{R}\to\left( -\frac{\pi}{2}, \frac{\pi}{2} \right),\\
+\arctan&:=\left(\tan\mid_{\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)}\right)^{-1}.
+\end{align*}$$
 
+**Definition**:  We define the inverse of the cotangent function to be
 
-Informally, given two numbers $x,y\in\mathbb{R}$ such that $\sin x=y$, then we have $\arcsin y=x$ and $x\in\left[ -\frac{\pi}{2}, \frac{\pi}{2} \right]$. Let's discuss the derivative of $\arcsin$ next.
+$$\begin{align*}
+\text{arccot}&:\mathbb{R}\to(0,\pi),\\
+\text{arccot} &:= \left(\cot\mid_{(0,\pi)}\right)^{-1}.
+\end{align*}$$
 
-Given an interval $I:=\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)$ and a function $f(x):=\sin x$, then $f^{-1}(y):=\arcsin y ; (y\in(-1,1))$, we apply the theorem of derivative inverse of functions;
+### Derivatives of the Inverse of Trigonometric Functions
+
+Next, we will discuss about the derivatives of the inverse trigonometric functions.
+
+Given an interval $I:=\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)$ and a function $f:(-1,1)\to\mathbb{{R}}:=\sin x, f^{-1}(y):=\arcsin y$, we apply the theorem of derivative inverse of functions;
 
 $$\begin{align*}\arcsin'y&=(f^-1)'(y)\\
 &=\frac{1}{\sin'(\arcsin y)}\\
@@ -91,5 +108,5 @@ $$\begin{align*}
 We can obtain the first-order derivative of $\arccos$ in a similar manner to $\arcsin$. For $y\in(-1,1)$, we have
 
 $$\begin{align*}
-\arccos'(y)=-\frac{1}{\sqrt{1-y^2}} 
+\arccos'(y)=-\frac{1}{\sqrt{1-y^2}}.
 \end{align*}$$
