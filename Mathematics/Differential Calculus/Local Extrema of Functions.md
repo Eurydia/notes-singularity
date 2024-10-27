@@ -77,36 +77,37 @@ $$\begin{align*}
 \text{arccot} &:= \left(\cot\mid_{(0,\pi)}\right)^{-1}.
 \end{align*}$$
 
-### Derivatives of the Inverse of Trigonometric Functions
+### Derivatives of the Inverse Trigonometric Functions
 
-Next, we will discuss about the derivatives of the inverse trigonometric functions.
-
-Given an interval $I:=\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)$ and a function $f:(-1,1)\to\mathbb{{R}}:=\sin x, f^{-1}(y):=\arcsin y$, we apply the theorem of derivative inverse of functions;
-
-$$\begin{align*}\arcsin'y&=(f^-1)'(y)\\
-&=\frac{1}{\sin'(\arcsin y)}\\
-&=\frac{1}{\cos(\arcsin y)}.
-\end{align*}$$
-
-From the definition of $\arcsin$ mentioned above, we know that $\arcsin y\in\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)$, we can observe that $\cos(\arcsin y)\gt0$, which means we can proceed.
-
-Next we apply the Pythagorean theorem;
+**Theorem**: The inverse sine function is differentiable in the interval $\left( -\frac{\pi}{2}, \frac{\pi}{2} \right)$ and its derivative is
 
 $$\begin{align*}
-\arcsin'(y)&=\frac{1}{\cos(\arcsin y)}\\
-&=\frac{1}{\sqrt{1-(\sin(\arcsin y))^2}}
+(\arcsin')(y)=-\frac{1}{\sqrt{1-y^2}}
 \end{align*}$$
 
-We recognize that $\sin(\arcsin y)$ is the same structure as $f(f^{-1}(y))$ which is equivalent to $y$ itself, so we have
+for $y\in(-1,1)$.
+
+**Theorem**: The inverse of the cosine function is differentiable in the interval $(-1,1)$ and its first-order derivative is
 
 $$\begin{align*}
-\arcsin'(y)&=\frac{1}{\sqrt{1-(\sin(\arcsin y))^2}}\\
-&=\frac{1}{\sqrt{1-y^2}}.
+&(\arccos')(y)=-\frac{1}{\sqrt{1-x^2}}
 \end{align*}$$
 
+for $y\in(-1,1)$.
 
-We can obtain the first-order derivative of $\arccos$ in a similar manner to $\arcsin$. For $y\in(-1,1)$, we have
+**Theorem**: The inverse of tangent function is differentiable everywhere on $\mathbb{R}$ and its derivative is 
 
 $$\begin{align*}
-\arccos'(y)=-\frac{1}{\sqrt{1-y^2}}.
+(\arctan')(y)=\frac{1}{1+x^{2}}
 \end{align*}$$
+
+for $y\in\mathbb{R}$.
+
+
+**Theorem**: The inverse of the cotangent function is differentiable everywhere on $\mathbb{R}$ and its derivative is
+
+$$\begin{align*}
+(\text{arccot}')(y) =  -\frac{1}{1+y^{2}}
+\end{align*}$$
+
+for $y\in\mathbb{R}$.
