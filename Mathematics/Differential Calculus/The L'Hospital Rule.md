@@ -51,3 +51,40 @@ D_{f^{(k)}}:=\{x\in\text{int}D_{f}\mid f\in D^{k}(x)\},
 \end{align*}$$
 
 we say the function $f^{(k)}:D_{f^{(k)}}\to\mathbb{R}$ is the $k^{\text{th}}$-order derivative of $f$. Similarly, we can also say $f$ is $k$ times differentiable.
+
+### Introduction to Taylor's Polynomial
+
+**Definition**: Given a real number $a\in\mathbb{R}$ and a function $f:\mathbb{R}\to\mathbb{R}$ such $f$ is $n$ times differentiable at $a$, we define the $n^{\text{th}}$-term Taylor's polynomial of the function $f$ with the center point $a$ to be
+
+$$\begin{align*}
+T_{n,a}&:=\sum\limits_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^{k}.
+\end{align*}$$
+
+**Theorem**: (Taylor's formula) Given an open interval $I\subseteq\mathbb{R}$, a real number $a\in I$, and a function $f:I\to\mathbb{R}$ such that $f$ is $n\in\mathbb{N}_{\ge0}$ times differentiable at $a$, then $\forall x\in I\setminus\{a\}$, there exists a real number $\xi$ between $x$ and $a$ such that
+
+$$\begin{align*}
+f(x)-T_{n-1,a}=\frac{f^{(n)}(\xi)}{n!}(x-a)^{n}.
+\end{align*}$$
+
+**Remark**: We can observe that in the case $n=0$, the Taylor's formula coincide with [[Lagrange's mean-value theorem]].
+
+## Concavity
+
+### Introduction to Concavity
+
+**Definition**: Given an interval $I\subseteq\mathbb{R}$ and a function $f:I\to\mathbb{R}$, then we say that the function $f$ is $\text{``concave''}$ if 
+
+$$
+\begin{align*}
+\forall x,y\in I : (x\lt y) \land\forall{\lambda\in(0,1)} : f(\lambda x + (1-\lambda)y)\gt\lambda f(x)+(1-\lambda)f(y).
+\end{align*}
+$$
+
+**Definition**: Given an open interval $i\subseteq\mathbb{R}$ and a function $f:I\to\mathbb{R}$, we say that the function $f$ is $\text{``convex''}$ if 
+
+$$
+\begin{align*}
+\forall x,y\in I: (x\lt y)\land (\forall\lambda\in(0,1):f(x\lambda+(1-\lambda)y)\lt f(\lambda x) + (1-\lambda)f(y))
+\end{align*}
+$$
+
