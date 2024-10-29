@@ -70,21 +70,80 @@ f(x)-T_{n-1,a}=\frac{f^{(n)}(\xi)}{n!}(x-a)^{n}.
 
 ## Concavity
 
-### Introduction to Concavity
+### Definition of Concavity
 
 **Definition**: Given an interval $I\subseteq\mathbb{R}$ and a function $f:I\to\mathbb{R}$, then we say that the function $f$ is $\text{``concave''}$ if 
 
 $$
 \begin{align*}
-\forall x,y\in I : (x\lt y) \land\forall{\lambda\in(0,1)} : f(\lambda x + (1-\lambda)y)\gt\lambda f(x)+(1-\lambda)f(y).
+\forall x,y\in I : \forall{\alpha\in[0,1]} : f((1-\alpha)x+\alpha y)\ge(1-\alpha)f(x)+\alpha f(y).
 \end{align*}
 $$
 
-**Definition**: Given an open interval $i\subseteq\mathbb{R}$ and a function $f:I\to\mathbb{R}$, we say that the function $f$ is $\text{``convex''}$ if 
+**Definition**: Given an interval $I\subseteq\mathbb{R}$, and a function $f:I\to\mathbb{R}$, we say that the function $f$ is a $\text{``strict concave''}$ function if
 
 $$
 \begin{align*}
-\forall x,y\in I: (x\lt y)\land (\forall\lambda\in(0,1):f(x\lambda+(1-\lambda)y)\lt f(\lambda x) + (1-\lambda)f(y))
+\forall x,y\in I :(x\ne y)\land(\forall{\alpha\in(0,1)} : f((1-\alpha)x+\alpha y)\gt(1-\alpha)f(x)+\alpha f(y)).
 \end{align*}
 $$
 
+### Definition of Convexity
+
+**Remarks**: The term $\text{``convexity"}$ is an alternative term for $\text{``concave upward."}$ As such the definition for convex function and strict convex function are similar to the definition of concave functions.
+
+
+**Definition**: Given an interval $I\subseteq\mathbb{R}$ and a function $f:I\to\mathbb{R}$, then we say that the function $f$ is $\text{``convex''}$ if for any two real numbers $x,y\in I$, and any real number $\alpha\in[0,1]$
+
+$$
+\begin{align*}
+f((1-\alpha)x+\alpha y)\le(1-\alpha)f(x)+\alpha f(y)
+\end{align*}
+$$
+
+holds.
+
+**Definition**: Given an interval $I\subseteq\mathbb{R}$, and a function $f:I\to\mathbb{R}$, we say that the function $f$ is a $\text{``strict convex''}$ function if for any two real numbers $x,y\in I$ such that $x\ne y$,  and any real number $\alpha\in(0,1)$
+
+$$
+\begin{align*}
+f((1-\alpha)x+\alpha y)\lt(1-\alpha)f(x)+\alpha f(y))
+\end{align*}
+$$
+
+holds.
+
+#### Theorems of Concavity
+
+##### Theorems of Concavity on First-order Derivatives
+
+**Theorems**: Given an interval $I\subseteq\mathbb{R}$ and a everywhere-continuous, everywhere-differentiable function $f:I\to\mathbb{R}$, the function $f$ is concave on $I$ if the first-order derivative of $f$ is strictly increasing.
+
+**Theorem**: Given an interval $I\subseteq\mathbb{R}$ and a function $f:I\to\mathbb{R}$ which is continuous and differentiable on the interval $I$, the function $f$ is convex on $I$ if the first-order derivative of $f$ is strictly decreasing.
+
+##### Theorems of Concavity on Second-order Derivatives
+
+**Theorem**: Given a real interval $I\subseteq\mathbb{R}$ and a function $f:I\to\mathbb{R}$, which is continuous and twice-differentiable on the interval $I$, the function $f$ is convex on $I$ if 
+
+$$
+\begin{align*}
+\forall{x\in\text{int}I}:f''(x)\gt0.
+\end{align*}
+$$
+
+**Theorem**: Given a real interval $I\subseteq\mathbb{R}$, and a function $f:I\to\mathbb{R}$, which is continuous and twice-differentiable on the interval $I$, the function $f$ is concave on $I$ if
+
+$$
+\begin{align*}
+\forall{x\in\text{int}I}:f''(x)\lt0.
+\end{align*}
+$$
+
+#### Application of Concavity
+
+**Definition**: Given a real interval $I\subseteq\mathbb{R}$, a function $f:I\to\mathbb{R}$, which is continuous and twice-differentiable on $I$, and a real number $\alpha\in\int I$, we say that the real number $\alpha$ is a $\text{``point of inflection"}$ if there exists a positive real number $\delta\in\mathbb{R}$, such that $(\alpha-\delta,\alpha+\delta)\subseteq I$, and at least one of the conditions hold;
+
+- case 1: $f|_{(\alpha-\delta, \alpha]}$ is convex and $f|_{[\alpha, \alpha+\delta)}$ is concave, or
+- case 2: $f|_{(\alpha-\delta, \alpha]}$ is concave and $f|_{[\alpha, \alpha+\delta)}$ is convex.
+
+**Remarks**: Informally, an inflection point is a point in which the property of a function switches from concave to convex or from convex to concave.
