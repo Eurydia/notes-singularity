@@ -4,7 +4,8 @@
 - [[Continuous Functions Defined on Compact Sets]]
 - [[Differentiation of Functions]]
 - [[Local Extrema of Functions]]
-- [[]]
+- [[The L'Hospital Rule]]
+- [[Antiderivatives]]
 
 ## Additional Resources
 
