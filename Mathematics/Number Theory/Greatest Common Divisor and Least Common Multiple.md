@@ -384,3 +384,34 @@ $$
 $$
 
 Thus we obtain $x=4$ and $y=-9$ as the Bezout coefficient of $a$ and $b$.
+
+#### Linear Diophantine Equations
+
+**Definition**: Given three constant integers $a,b,c\in\mathbb{Z}$ and two integer variables $x,y\in\mathbb{Z}$, we say that a *linear Diophantine equation* is an equation of the form; ^7b9919
+
+$$
+\begin{align*}
+ax+by=c.
+\end{align*}
+$$
+
+**Theorem**: A linear Diophantine equation $ax+by=c$ has a solution for $x,y$ if and only if;
+
+$$
+\begin{align*}
+\gcd(a,b)\mid c.
+\end{align*}
+$$
+
+**Theorem**: If a linear Diophantine equation satisfies the above-mentioned theorem, that is, it has a solution, then  it has infinitely many solutions.
+
+**Theorem**: If a linear Diophantine equation has a solution $x_{0}, y_{0}\in\mathbb{Z}$, every possible solution is in the form
+
+$$
+\begin{align*}
+x=x_{0}-k\cdot\left( \frac{b}{\gcd(a,b)} \right)\\
+y=y_{0}+k\cdot\left( \frac{a}{\gcd(a,b)} \right)
+\end{align*}
+$$
+
+where $k$ is an arbitrary integer.
