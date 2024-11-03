@@ -1,6 +1,42 @@
-# Notations and Definitions
+# Operations in Relational Algebra
 
-**Remarks**: Relational algebra uses sets as its underlying structure, so the result we produce using relational algebra will be inherently unique and unordered.
+## Introduction to Relational Algebra Operations
+
+**Definition**: Given two positive natural numbers $m,n\in\mathbb{N}_{\gt0}$, we define 
+
+$$
+\begin{align*}
+\text{``a relation $S$ with $m$ rows and $n$ columns"}
+\end{align*}
+$$
+
+to be
+
+$$
+\begin{align*}
+S\coloneqq\{(s_{1j}, \ldots, s_{nj})\mid j=1,2,\ldots,m\}.
+\end{align*}
+$$
+
+**Remarks**: Informally, each ordered tuple $(s_{1j}, \ldots, s_{nj})\in S$ represents the $j$th row of a table in database and each component of  tuple represents an attribute in the table. As such, the $i$th component of each tuple has the same data type.
+
+**Definition**: Given a relation $S\coloneqq\{(s_{1j}, \ldots, s_{nj})\mid j=1,2,\ldots,m\}$, we associate $S$ with a unique tuple 
+
+$$
+\begin{align*}
+A=(a_{1},\ldots,a_{n})
+\end{align*}
+$$
+
+where the $i$th component of the tuple $A$ defines name and datatype of the $i$th column of the table, we say that
+
+$$
+\begin{align*}
+\text{``the tuple $A$ is the relation schema of the relation $S$."}
+\end{align*}
+$$
+
+### Informal Look
 
 ## Terminologies
 
