@@ -2,11 +2,11 @@
 
 ## Introduction to Relational Algebra Operations
 
-**Definition**: Given two positive natural numbers $m,n\in\mathbb{N}_{\gt0}$, we define 
+**Definitions**: Given a two natural numbers $m,n\in\mathbb{N}\gt0$, we define 
 
 $$
 \begin{align*}
-\text{``a relation $S$ with $m$ rows and $n$ columns"}
+\text{``a relation $S$ with $m$ rows and $n$ columns''}
 \end{align*}
 $$
 
@@ -14,221 +14,220 @@ to be
 
 $$
 \begin{align*}
-S\coloneqq\{(s_{1j}, \ldots, s_{nj})\mid j=1,2,\ldots,m\}.
+S\coloneqq\{(s_{j1},\ldots,s_{jn})\mid j=1,2,\ldots,m \}.
 \end{align*}
 $$
 
-**Remarks**: Informally, each ordered tuple $(s_{1j}, \ldots, s_{nj})\in S$ represents the $j$th row of a table in database and each component of  tuple represents an attribute in the table. As such, the $i$th component of each tuple has the same data type.
+**Remarks**: Semantically, the each tuple represents a row in a table and each component of the tuple represents each column.
 
-**Definition**: Given a relation $S\coloneqq\{(s_{1j}, \ldots, s_{nj})\mid j=1,2,\ldots,m\}$, we associate $S$ with a unique tuple 
+**Definition**: We say that a $\text{``relation schema"}$ is an ordered tuple which contains the column names and data types. For example, consider the following relation schema
 
 $$
 \begin{align*}
-A=(a_{1},\ldots,a_{n})
+\text{(name: string, department: integer)},
 \end{align*}
 $$
 
-where the $i$th component of the tuple $A$ defines name and datatype of the $i$th column of the table, we say that
+in this example, the relation has two columns; we label the first column as $\text{``name''}$ and the second column as $\text{``department''}$. The first column contains strings and the second column contains integers.
 
-$$
-\begin{align*}
-\text{``the tuple $A$ is the relation schema of the relation $S$."}
-\end{align*}
-$$
+**Remarks**: With these definitions, we are modelling a database into a mathematical object.
 
-### Informal Look
+## Operations on Relations
 
-## Terminologies
-
-### Relation
-
-**Definitions**: A *relation* is a named, two-dimensional table in a database. We say that the column names of each table in the database are the *attributes*, and each row is a *tuple*.
-
-**Definition**: A *relational schema* is an identifier along with a tuple containing attributes. We use it to define the name of a relation and its attributes. For example;
-
-*Employee(name: string, department: integer)*
-
-is a valid schema. We have an *Employee* relation with two attributes; the *name* which we represent with a string, and the *department* which we represent with an integer.
-
-However, there are not strict convention for a relational schema. As such, the following is also valid;
-
-*Employee(name, department)*
-
-has omitted the data types for the attributes, but we can still understand the structure of the schema.
-
-### Database
-
-**Definition**: A *database* is a collection of one or more relations.
-
-**Definition**: A *database schema* is a collection of all *relational schema* in a given database.
-
-## Operators
-
-### Usual set operators
-
-Since the underlying structure for relational algebra is a set, we can perform the usual set operation given that the two relations have the same relational schema. 
-
-Let $A,B$ be relations with the same relational schema where
-
-$$
-\begin{align*}
-&A:=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe’s & Bud & 2.50 \\
-Joe’s & Miller & 2.75 \\ 
-Sue’s & Bud & 2.50
-\end{array}
-& B:=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe’s & Bud & 2.50\\
-Jack’s & Bud & 2.75
-\end{array}
-\end{align*}
-$$
-
-The usual set operations behave in the following way;
-
-- Set union;
-
-$$
-\begin{align*}
-&A\cup B=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe’s & Bud & 2.50 \\
-Joe’s & Miller & 2.75 \\ 
-Sue’s & Bud & 2.50\\
-Jack’s & Bud & 2.75
-\end{array}
-\end{align*}
-$$
-
-- Set intersection;
-
-$$
-\begin{align*}
-&A\cap B=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe’s & Bud & 2.50 \\
-\end{array}
-\end{align*}
-$$
-
-- Set difference;
-
-$$
-\begin{align*}
-&A\setminus B=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Jack’s & Bud & 2.75
-\end{array}
-\end{align*}
-$$
-
-> [!notice] Intuition
-> From these behaviors, we can deduce that two rows are equal if and only if they have the same relational schema, and every attribute is equal.
+**Remarks**: The well-known set operations, such as set union, set intersection, and set difference, only operable on relations which share the same relation schema. That is, the relations must share the same column names as well as the datatype.
 
 ### Selection
 
-**Definition**: Given a relation $R$, we use selection to select specific rows from $R$. We use $\sigma_{\mathcal{C}}$ to denote selection where $\mathcal{C}$ represents the Boolean condition.
-
-Informally, $\sigma_{\mathcal{C}}$ filters rows in $R$. It keeps those rows which satisfy $\mathcal{C}$ and discards those that do not.
-
-For example, let $A$ be a relation where
+**Definition**: Given a relation $R$, we define the selection operation to be a unary operator with one parameter. We use the expression
 
 $$
 \begin{align*}
-&A=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe’s & Bud & 2.50 \\
-Joe’s & Miller & 2.75 \\ 
-Sue’s & Bud & 2.50\\
-\end{array}
+\text{``$\sigma_{\mathcal{c}}(R)$''}
 \end{align*}
 $$
 
-We define a relation $B$ from $A$ as
+to denote the selection of the relation $R$ under the Boolean expression $\mathcal{c}$. By evaluating the above-mentioned expression, we obtain those tuples in relation $R$ which satisfy the condition $\mathcal{c}$.
+
+**Remarks**: Informally, we are looking at each row in $R$ one by one, and test each row against the condition $\mathcal{c}$. We also allow conditions in $\mathcal{c}$ to reference the column name in $R$. 
+
+For example, let's consider a relation $A$ with the relation schema
 
 $$
 \begin{align*}
-B=\sigma_{Bar=\text{``Joe's"}}(A)=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe’s & Bud & 2.50 \\
-Joe’s & Miller & 2.75 \\ 
-\end{array}
+(\text{Bar:String}, \text{Beer:String}, \text{Price:Number})
 \end{align*}
 $$
 
-Additionally, we define relation $C$ from $A$ as
+We can perform an elementary selection by referencing one of the columns;
 
 $$
 \begin{align*}
-C=\sigma_{Price=2.75\land Bar=\text{``Joe's"}}(A)=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe's & Miller & 2.75 \\ 
-\end{array}
+\sigma_{\text{Bar=``Joe's''}}(A),
 \end{align*}
 $$
+
+which selects only those rows whose $\text{``Bar''}$ column is $\text{``Joe's''}$.
+
+We can also perform a more complex selection by referencing multiple columns;
+
+$$
+\begin{align*}
+\sigma_{\text{Price=2.75$\land$Bar=``Joe's''}}(A),
+\end{align*}
+$$
+
+which selects only those rows whose $\text{``Price''}$ column is exactly 2.75 and $\text{``Bar''}$ column is $\text{``Joe's''}$
 
 ### Projection
 
-**Definition**: Given a relation $R$, we use *projection* to create new relation with specific attributes from $R$. We use $\pi_{L}$ to denote projection, where $L$ is a list of attributes in $R$.
-
-Informally, while selection acts as a filter function, projection is a mapping function. The order of attributes is the same as given in the project, from left to right.
-
-For example, let $A$ be a relation where
+**Definition**: Given a relation $R$, we define the project operation to be a unary operator with one parameter. We use the expression
 
 $$
 \begin{align*}
-&A=\begin{array}{|c|c|}
-Bar & Beer & Price\\ 
-\hline 
-Joe’s & Bud & 2.50 \\
-Joe’s & Miller & 2.75 \\ 
-Sue’s & Bud & 2.50\\
-\end{array}
+\pi_{\mathcal{L}}(R),
 \end{align*}
 $$
 
-We define $B$ as a project of $A$;
+where $\mathcal{L}$ is an ordered list of column names from relation schema of $R$. Semantically, we pick only those columns which are included in the $\mathcal{L}$. If the project causes duplicate rows, we remove all but one row.
+
+**Remarks**: Let's consider a relation $A$ with the following relation schema
 
 $$
 \begin{align*}
-&B=\pi_{Bar,Price}(A)=\begin{array}{|c|c|}
-Bar &  Price\\ 
-\hline 
-Joe’s & 2.50 \\
-Joe’s & 2.75 \\ 
-Sue’s & 2.50\\
-\end{array}
+\text{(Bar: String, Beer: String, Price: Number)},
 \end{align*}
 $$
 
-In additional, we also allow an *extended projection* where $L$ can be any arbitrary expression. This allows us to include additional attributes which are present in the underlying relation.
-
-For example, we can define $C$ as an extended projection of $A$
+we can rearrange the column order using the expression
 
 $$
 \begin{align*}
-&C=\pi_{Bar,Beer,Price,2\cdot Price\rightarrow DPrice}=\begin{array}{|c|c|c|}
-Bar & Beer & Price & DPrice\\ 
-\hline 
-Joe’s & Bud & 2.50 & 5.00\\
-Joe’s & Miller & 2.75 & 5.50 \\ 
-Sue’s & Bud & 2.50 & 5.00\\
-\end{array}
+\pi_{\text{Price, Beer, Bar}}(A).
 \end{align*}
 $$
 
-which has an additional attribute *DPrice* which we compute from doubling the *Price* attribute.
+We can also remove one of the columns 
+
+$$
+\begin{align*}
+\pi_{\text{Bar, Price}}(A).
+\end{align*}
+$$
+
+#### Extended Projection
+
+**Remarks**: Using projection, we cannot introduce a new column into the relation schema, which is not useful for us, but we define the extended projection operation.
+
+**Definition**: Given a relation $R$, we define the $\text{``extended projection''}$ operation to be a unary operator with one parameter. We use the expression
+
+$$
+\begin{align*}
+\pi_{\text{$\mathcal{K}$}}(R)
+\end{align*}
+$$
+
+where $\mathcal{K}$ is an ordered tuple of arbitrary expression. If we want to introduce a new column, we must use the expression of the form
+
+$$
+\begin{align*}
+\text{<Value>}\rightarrow\text{<Column name>}.
+\end{align*}
+$$
+
+Let's consider a relation $A$ with relation schema 
+
+$$
+\begin{align*}
+\text{(Bar:  String, Beer: String, Price: Number)}.
+\end{align*}
+$$
+
+We can maintain the original columns and introduce a new column. We call the new column $\text{``DPrice''}$ which we obtain from doubling the original $\text{``Price''}$ column;
+
+$$
+\begin{align*}
+\pi_{\text{Bar, Beer, Price, $2\cdot$Price$\rightarrow$DPrice}}(R).
+\end{align*}
+$$
+
+### Cartesian Product
+
+**Definition**: Given two relations $A,B$, we define the $\text{``cartesian product''}$ to be a binary operation. We denote the operation with
+
+$$
+\begin{align*}
+A\times B.
+\end{align*}
+$$
+
+Semantically, we take one row in $A$ and, one by one, we concatenate every row in $B$ to the end. If two columns have the same name, we rename those columns into $A.\text{name}$ and $A.\text{name}$.
+
+### Theta Join
+
+**Definition**: Given two relations $A,B$, we define $\text{``theta-join''}$ to be a binary operator with one parameter. We denote it using 
+
+$$
+\begin{align*}
+A\bowtie_{\mathcal{c}}B
+\end{align*}
+$$
+
+where $\mathcal{c}$ is a Boolean expression. Semantically, this operation applies the cartesian product then to the result we apply selection;
+
+$$
+\begin{align*}
+A\bowtie_{\mathcal{c}}B = \sigma_{\mathcal{c}}(A\times B).
+\end{align*}
+$$
+
+Much like selection, the expression $\mathcal{c}$ can reference column names in either relations.
+
+### Natural Join
+
+**Definition**: Given two relations $A,B$, we define $\text{``natural join''}$ to be a binary operation. We write them as
+
+$$
+\begin{align*}
+A\bowtie B.
+\end{align*}
+$$
+
+#### Natural Join on One Common Column
+
+Let's consider two relations $X,Y$.
+
+We define the relation $X$ to be the following table;
+
+| Bar   | Beer   | Price |
+| ----- | ------ | ----- |
+| Joe's | Miller | 2.75  |
+
+We define the relation $Y$ to be the following table;
+
+| Bar   | Address   |
+| ----- | --------- |
+| Joe's | Maple st. |
+| Joe's | River rd. | 
+
+We obtain the following table if we apply natural join on $X$ and $Y$;
+
+| Bar   | Beer | Price | Address   |
+| ----- | ---- | ----- | --------- |
+| Joe's | Bud  | 2.5   | Maple st. |
+| Joe's | Bud  | 2.5   | River rd. | 
+
+### Renaming
+
+**Definition**: Given a relation $R$ which has $n\in\mathbb{N}_{\gt0}$ columns, we define the rename operator to be unary operator with one parameter. We write it as
+
+$$
+\begin{align*}
+\rho_{a_{1},\ldots,a_{n}}(R).
+\end{align*}
+$$
+
+Semantically, we rename the $i$th column of $R$ to $a_{i}$. 
 
 ## Materials
 
-- Relational algebra PowerPoint on Basic Operations and Relational Algebra on Bag Data Type: http://infolab.stanford.edu/~ullman/fcdb/aut07/slides/ra.pdf
+- Relational algebra PowerPoint on Basic Operations and Relational Algebra on Bag Data Type: http://infolab.stanford.edu/~ullman/fcdb/aut07/slides/ra.pdf.
