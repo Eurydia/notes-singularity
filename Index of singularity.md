@@ -4,6 +4,3 @@
 
 It takes time to learn, and if we forget, we need to invest more time to re-learn. With **Singularity**, I can sleep in peace knowing that I will never forget, nor will I ever have to re-learn anything, anymore.
 
-## Backup redundancy
-
-Originally, **Singularity** started as an Obsidian vault, but as the saying goes "one is none, two is one," it does not hurt to have some redundancy in place. In the worst case scenario when my hard drive is corrupted, this repository will be one of the backups.
