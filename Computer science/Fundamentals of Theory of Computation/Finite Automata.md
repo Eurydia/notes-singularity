@@ -94,13 +94,16 @@ $$
 
 ## Finite Automaton and Regular Grammars
 
-**Theorem**: Given a non-deterministic, finite automation $\mathcal{A}$, there exists a type-three grammar $G$ such that;
+**Theorem**: Given a non-deterministic, finite automation $\mathcal{A}=(Q,T,\delta, Q_{0},F)$, there exists a type-three grammar $G=(N,T,S,P)$ such that;
 
 $$
 \begin{align*}
 L(\mathcal{A})=L(G).
 \end{align*}
 $$
+
+
+---
 
 **Theorem**: Given a type-three grammar $G$, there exists a non-deterministic, finite automation $\mathcal{A}$ such that;
 
@@ -109,6 +112,33 @@ $$
 L(\mathcal{A})=L(G).
 \end{align*}
 $$
+
+**Application**: Given a type-three grammar, we can intuitively construct a non-deterministic, finite automaton. Consider the following example,
+
+$$
+\begin{matrix*}
+& & a & b\\
+\rightarrow & q_{0} &q_{2} &q_{1}\\
+\leftarrow &q_{1} & q_{3} &q_{0}\\
+\leftarrow &q_{2} &q_{0}& q_{3}\\
+&q_{3}& q_{1}&q_{2}
+\end{matrix*}
+$$
+
+From this, we can intuitively build construct a non-deterministic, finite automation $\mathcal{A}=(\{q_{0}, q_{1},q_{2},q_{3}\},\{a,b\},\delta, q_{0},\{q_{1},q_{2}\})$, we construct the transition function $\delta$ as
+
+$$
+\begin{align*}
+q_{0}&\to aq_{2}\mid bq_{1}\\
+q_{1}&\to aq_{3}\mid bq_{0}\mid\varepsilon\\
+q_{2}&\to aq_{0}\mid bq_{3}\mid\varepsilon\\
+q_{3}&\to aq_{1}\mid bq_{2}
+\end{align*}
+$$
+
+In this example, we follow the state transition function and introduce an epsilon rules to the accepting states. It is quite straight-forward since we only have to work with one input state $q_{0}$.
+
+---
 
 ## Conversion of Non-deterministic, Finite Automaton to Deterministic, Finite Automaton
 
