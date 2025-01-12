@@ -2,9 +2,9 @@
 
 ## Alphabets
 
-**Definition**: We say that an *alphabet* $V$ is a finite, non-empty set of symbols, where a symbol is any arbitrary glyph.
+**Definition**: We say that an *alphabet* is a finite, non-empty set of symbols, where a symbol is any arbitrary glyph.
 
-**Definition**: We say that an element of an alphabet $V$ is called a *letter*.
+**Definition**: We say that an element of an alphabet is a *letter*.
 
 ## Words
 
